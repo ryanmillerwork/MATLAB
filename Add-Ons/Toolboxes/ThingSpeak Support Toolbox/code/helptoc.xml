@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<toc version="2.0">
+    <tocitem target="thingSpeakSupport.html">ThingSpeak Support
+        <tocitem target="funclist.html">Functions 
+			<tocitem target="./html/thingspeakread.html">thingspeakread</tocitem>
+			<tocitem target="./html/thingspeakwrite.html">thingspeakwrite</tocitem>
+            <tocitem target="./html/thingspeakauthenticate.html">thingspeakauthenticate</tocitem>
+            <tocitem target="./html/thingspeakauthenticatedlist.html">thingspeakauthenticatedlist</tocitem>
+            <tocitem target="./html/thingspeakclearauthentication.html">thingspeakclearauthentication</tocitem>
+            <tocitem target="./html/urlfilter.html">urlfilter</tocitem>
+			<tocitem target="./html/thingspeakplot.html">thingspeakplot</tocitem>
+			<tocitem target="./html/thingspeakscatter.html">thingspeakscatter</tocitem>
+			<tocitem target="./html/thingspeakstem.html">thingspeakstem</tocitem>
+			<tocitem target="./html/thingspeakarea.html">thingspeakarea</tocitem>
+			<tocitem target="./html/thingspeakplotyy.html">thingspeakplotyy</tocitem>			
+        </tocitem>        
+    </tocitem>
+</toc>

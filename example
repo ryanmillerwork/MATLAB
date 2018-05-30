@@ -1,0 +1,7 @@
+diary on;
+disp(array)
+{Undefined function or variable 'array'.
+} 
+disp('uiarray')
+uiarray
+diary off;

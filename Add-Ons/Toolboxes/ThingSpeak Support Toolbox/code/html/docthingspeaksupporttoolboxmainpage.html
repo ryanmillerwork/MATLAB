@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ThingSpeak Support Toolbox</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeaksupporttoolboxmainpage.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3219</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">3c410f6e-bde6-47a8-91ac-739f2ee71df9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>ThingSpeak Support Toolbox</h1><!--introduction--><p>ThingSpeak&#8482; is a free web service hosted by MathWorks&reg; that lets you collect, analyze and act on sensor data, and develop Internet of Things applications. The ThingSpeak Support Toolbox lets you use MATLAB&reg; to read data from ThingSpeak and write data to ThingSpeak. It also provides functions to visualize data stored on <a href="https://www.thingspeak.com">ThingSpeak.com</a> or on private installations of the ThingSpeak server.</p><p>The ThingSpeak Support Toolbox has these following functions:</p><!--/introduction--><div><ul><li><a href="docthingspeakread.html">thingSpeakRead</a> - Read data stored in ThingSpeak channel</li><li><a href="docthingspeakwrite.html">thingSpeakWrite</a> - Write data to a ThingSpeak channel</li><li><a href="docthingspeakauthenticate.html">thingSpeakAuthenticate</a> - Store read/write API key</li><li><a href="docthingspeakauthenticatedlist.html">thingSpeakAuthenticatedList</a> - Display list of authenticated channels</li><li><a href="docthingspeakclearauthentication.html">thingSpeakClearAuthentication</a> - Clear authentication information</li><li><a href="docurlfilter.html">urlFilter</a> - Scrape numbers from web page</li><li><a href="docthingspeakplot.html">thingSpeakPlot</a> - Create 2-D line plot</li><li><a href="docthingspeakscatter.html">thingSpeakScatter</a> - Create scatter plot</li><li><a href="docthingspeakstem.html">thingSpeakStem</a> - Create discrete sequence or stem plot</li><li><a href="docthingspeakarea.html">thingSpeakArea</a> - Create filled area 2-D plot</li><li><a href="docthingspeakplotyy.html">thingSpeakPlotYY</a> - Create 2-D line plot with Y axes on both sides</li></ul></div><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% ThingSpeak Support Toolbox
+% ThingSpeak(TM) is a free web service hosted by MathWorks(R) that lets you collect, analyze and act on sensor data, 
+% and develop Internet of Things applications. The ThingSpeak Support Toolbox lets you use MATLAB(R) to read data from ThingSpeak and write data to ThingSpeak. 
+% It also provides functions to visualize data stored on <https://www.thingspeak.com ThingSpeak.com> or on private installations of the ThingSpeak server.
+%
+% The ThingSpeak Support Toolbox has these following functions:
+%%
+% 
+% * <docthingspeakread.html thingSpeakRead> - Read data stored in ThingSpeak channel
+% * <docthingspeakwrite.html thingSpeakWrite> - Write data to a ThingSpeak channel
+% * <docthingspeakauthenticate.html thingSpeakAuthenticate> - Store read/write API key
+% * <docthingspeakauthenticatedlist.html thingSpeakAuthenticatedList> - Display list of authenticated channels
+% * <docthingspeakclearauthentication.html thingSpeakClearAuthentication> -
+% Clear authentication information
+% * <docurlfilter.html urlFilter> - Scrape numbers from web page
+% * <docthingspeakplot.html thingSpeakPlot> - Create 2-D line plot
+% * <docthingspeakscatter.html thingSpeakScatter> - Create scatter plot
+% * <docthingspeakstem.html thingSpeakStem> - Create discrete sequence or stem plot
+% * <docthingspeakarea.html thingSpeakArea> - Create filled area 2-D plot
+% * <docthingspeakplotyy.html thingSpeakPlotYY> - Create 2-D line plot with Y axes on both sides
+%
+
+##### SOURCE END #####
+--></body></html>

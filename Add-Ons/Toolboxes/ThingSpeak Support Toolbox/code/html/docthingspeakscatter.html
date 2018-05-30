@@ -1,0 +1,444 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakScatter</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakscatter.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3201</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">8f1ede8c-f9b2-45ed-b831-24fc6f46764f</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakScatter</h1><!--introduction--><p>Create scatter plot</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Examples</a></li><li><a href="#8">Input Arguments</a></li><li><a href="#13">Name-Value Pair Arguments</a></li><li><a href="#14">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>thingSpeakScatter(X,Y)</tt></p><p><tt>thingSpeakScatter(X,Y,S)</tt></p><p><tt>thingSpeakScatter(X,Y,S,C)</tt></p><p><tt>thingSpeakScatter(X,Y,S,'filled')</tt></p><p><tt>thingSpeakScatter(X,Y,S,C,'filled')</tt></p><p><tt>thingSpeakScatter(X,Y,S,C,Name,Value)</tt></p><h2>Description<a name="2"></a></h2><p><tt>thingSpeakScatter(X,Y)</tt> displays a scatter chart with data value markers in the default size and color.</p><p><tt>thingSpeakScatter(X,Y,S)</tt> displays circles at the locations specified by the vectors X and Y, where X and Y are of the same size and S determines the area of each marker.</p><p><tt>thingSpeakScatter(X,Y,S,C)</tt> additionally specifies the the colors of the markers.</p><p><tt>thingSpeakScatter(X,Y,S,'filled')</tt> or <tt>thingSpeakScatter(X,Y,S,C,'filled')</tt> fills the markers.</p><p><tt>thingSpeakScatter(X,Y,S,C,Name,Value)</tt> additionally specifies optional Name,Value argument pairs.</p><h2>Examples<a name="3"></a></h2><p><b>Create Scatter Plot</b></p><p>Create a scatter plot with points of equal size.</p><pre class="codeinput">x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+thingSpeakScatter(x,y)
+</pre><img vspace="5" hspace="5" src="docthingspeakscatter_01.png" alt=""> <p><b>Varying Size Scatter Plot</b></p><p>Create a scatter plot with points of specific, varying sizes. Create 200 evenly spaced points with areas [1,100].</p><pre class="codeinput">x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = linspace(1,100,200);
+thingSpeakScatter(x,y,s)
+</pre><img vspace="5" hspace="5" src="docthingspeakscatter_02.png" alt=""> <p><b>Varying Color Scatter Plot</b></p><p>Create a scatter plot with points of varying Colors, mapped to the current colormap. Use default area markers.</p><pre class="codeinput">x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = linspace(1,100,200);
+c = linspace(1,10,length(x));
+thingSpeakScatter(x,y,s,c)
+</pre><img vspace="5" hspace="5" src="docthingspeakscatter_03.png" alt=""> <p><b>Filled Scatter Plot</b></p><p>Create a scatter plot with filled points of varying colors, mapped to the current colormap with an equal area of 25.</p><pre class="codeinput">x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = 25;
+c = linspace(1,10,length(x));
+thingSpeakScatter(x,y,s,c,<span class="string">'filled'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakscatter_04.png" alt=""> <p><b>Scatter Plot with Diamond Markers</b></p><p>Create a scatter plot with diamond marker points with an equal area of 140.</p><pre class="codeinput">theta = linspace(0,2*pi,150);
+x = sin(theta) + 0.75*rand(1,150);
+y = cos(theta) + 0.75*rand(1,150);
+s = 140;
+thingSpeakScatter(x,y,s,<span class="string">'d'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakscatter_05.png" alt=""> <h2>Input Arguments<a name="8"></a></h2><p><tt>X</tt> - X values, specified as a scalar, a vector, or a matrix. <tt>X</tt> can be a numeric array, logical array, or datetime array.</p><p><tt>Y</tt> - Y values, specified as a scalar, a vector, or a matrix. <tt>Y</tt> can be a numeric array, or logical array.</p><p><tt>S</tt> - Marker are specified in one of these forms:</p><div><ul><li>Numeric scalar &#8212; Plot all markers with equal area.</li><li>Row or column vector &#8212; Use different areas for each marker. Corresponding elements in X, Y, and a determine the location and area of each marker. The length of a must equal the length of X and Y.</li><li>[] &#8212; Use the default area of 36 points squared.</li></ul></div><p>C - Marker color, specified as one of these values:</p><div><ul><li>RGB triplet or a color string &#8212; Specify a custom color used for all markers.</li><li>Vector &#8212; Use different colors for each marker and linearly map values in C to the colors in the current color map. The length of C must equal the length of X and Y. To change the color map for the axes, use the colormap function.</li></ul></div><p>If you have three points in the scatter plot and want the colors to be indexed into the color map, specify C as a three-element column vector.</p><p>An RGB triplet is a three-element row vector whose elements specify the intensities of the red, green, and blue components of the color. The intensities must be in the range [0,1], for example, [0.4 0.6 0.7]. This table lists RGB triplet values that have equivalent color strings.</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+<tbody>
+                      <tr valign="top">
+                          <td><p><b>Long Name</b></p></td>
+                          <td><p><b>Short Name</b></p></td>
+                          <td><p><b>RGB Triplet</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'yellow'</tt></p></td>
+                          <td><p><tt>'y'</tt></p></td>
+                          <td><p><tt>[1 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'magenta'</tt></p></td>
+                          <td><p><tt>'m'</tt></p></td>
+                          <td><p><tt>[1 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'cyan'</tt></p></td>
+                          <td><p><tt>'c'</tt></p></td>
+                          <td><p><tt>[0 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'red'</tt></p></td>
+                          <td><p><tt>'r'</tt></p></td>
+                          <td><p><tt>[1 0 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'green'</tt></p></td>
+                          <td><p><tt>'g'</tt></p></td>
+                          <td><p><tt>[0 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'blue'</tt></p></td>
+                          <td><p><tt>'b'</tt></p></td>
+                          <td><p><tt>[0 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'white'</tt></p></td>
+                          <td><p><tt>'w'</tt></p></td>
+                          <td><p><tt>[1 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'black'</tt></p></td>
+                          <td><p><tt>'k'</tt></p></td>
+                          <td><p><tt>[0 0 0]</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+</p><p><b>Example:</b> <tt>thingSpeakScatter(x,y,36,'blue');</tt></p><p><b>Example:</b> <tt>thingSpeakScatter(x,y,36,[0 0 1]);</tt></p><p><tt>filled</tt> - Fill marker area, specified as <tt>'filled'</tt> to create a plot with a filled marker.</p><h2>Name-Value Pair Arguments<a name="13"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt>.</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tbody>
+      <tr valign="top">
+          <td><p><tt>'Marker'</tt></p></td>
+          <td><p>Marker symbol, specified as a string listed in the table.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>String</b></p></td>
+                          <td><p><b>Marker Symbol</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'o'</tt></p></td>
+                          <td><p><tt>Circle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'square' or 's'</tt></p></td>
+                          <td><p><tt>Square</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'diamond' or 'd'</tt></p></td>
+                          <td><p><tt>Diamond</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'^'</tt></p></td>
+                          <td><p><tt>Upward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'v'</tt></p></td>
+                          <td><p><tt>Downward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'none'</tt></p></td>
+                          <td><p><tt>No markers</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p><b>Example:</b> <tt>thingSpeakScatter(x,y,'Marker','s');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YLabel'</tt></p></td>
+          <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter(1:10,1:10,'YLabel','Y-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Xlabel'</tt></p></td>
+          <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter((1:10,1:10,'XLabel','X-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Title'</tt></p></td>
+          <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter(1:10,1:10,'Title','Plot Title');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Grid'</tt></p></td>
+          <td><p>Plot grid, specified as a string input turning the grid <tt>'on'</tt> or <tt>'off'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Grid','on');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'XGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+      </tr>
+  </tbody>
+</table>
+</p><h2>See Also<a name="14"></a></h2><p><a href="docthingspeakarea.html">thingSpeakArea</a> | <a href="docthingspeakplotyy.html">thingSpeakPlotYY</a> | <a href="docthingspeakread.html">thingSpeakRead</a> | <a href="docthingspeakplot.html">thingSpeakPlot</a> | <a href="docthingspeakstem.html">thingSpeakStem</a> | <a href="docthingspeakwrite.html">thingSpeakWrite</a> | <a href="docurlFilter.html">urlFilter</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakScatter
+% Create scatter plot
+%% Syntax
+% |thingSpeakScatter(X,Y)|
+% 
+% |thingSpeakScatter(X,Y,S)|
+%
+% |thingSpeakScatter(X,Y,S,C)|
+% 
+% |thingSpeakScatter(X,Y,S,'filled')|
+%
+% |thingSpeakScatter(X,Y,S,C,'filled')|
+%
+% |thingSpeakScatter(X,Y,S,C,Name,Value)|
+%% Description
+% |thingSpeakScatter(X,Y)| displays a scatter chart with data value markers in the default size and color.
+%
+% |thingSpeakScatter(X,Y,S)| displays circles at the locations specified by
+% the vectors X and Y, where X and Y are of the same size and S determines the area of each marker.
+%
+% |thingSpeakScatter(X,Y,S,C)| additionally specifies the the colors of the markers.
+%
+% |thingSpeakScatter(X,Y,S,'filled')| or |thingSpeakScatter(X,Y,S,C,'filled')| fills the markers.
+% 
+% |thingSpeakScatter(X,Y,S,C,Name,Value)| additionally specifies optional Name,Value argument pairs.
+%% Examples
+%
+% *Create Scatter Plot*
+%
+% Create a scatter plot with points of equal size.
+x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+thingSpeakScatter(x,y)
+%%
+% *Varying Size Scatter Plot*
+% 
+% Create a scatter plot with points of specific, varying sizes. Create 200
+% evenly spaced points with areas [1,100].
+x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = linspace(1,100,200);
+thingSpeakScatter(x,y,s)
+%%
+% *Varying Color Scatter Plot*
+%
+% Create a scatter plot with points of varying Colors, mapped to the current colormap. Use default area markers.
+x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = linspace(1,100,200);
+c = linspace(1,10,length(x));
+thingSpeakScatter(x,y,s,c)
+%%
+% *Filled Scatter Plot*
+%
+% Create a scatter plot with filled points of varying colors, mapped to the current colormap with an equal area of 25.
+x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);
+s = 25;
+c = linspace(1,10,length(x));
+thingSpeakScatter(x,y,s,c,'filled')
+%%
+% *Scatter Plot with Diamond Markers*
+%
+% Create a scatter plot with diamond marker points with an equal area of 140.
+theta = linspace(0,2*pi,150);
+x = sin(theta) + 0.75*rand(1,150);
+y = cos(theta) + 0.75*rand(1,150);
+s = 140;
+thingSpeakScatter(x,y,s,'d')
+%% Input Arguments
+% |X| - X values, specified as a scalar, a vector, or a matrix. |X| can be a numeric array, logical array, or datetime array.
+%
+% |Y| - Y values, specified as a scalar, a vector, or a matrix. |Y| can be a numeric array, or logical array.
+%
+% |S| - Marker are specified in one of these forms:
+%%
+% 
+% * Numeric scalar — Plot all markers with equal area.
+% * Row or column vector — Use different areas for each marker. Corresponding elements in X, Y, and a determine the location and area of each marker. The length of a must equal the length of X and Y.
+% * [] — Use the default area of 36 points squared.
+%
+%%
+% C - Marker color, specified as one of these values:
+%%
+% 
+% * RGB triplet or a color string — Specify a custom color used for all markers.
+% * Vector — Use different colors for each marker and linearly map values in C to the colors in the current color map. The length of C must equal the length of X and Y. To change the color map for the axes, use the colormap function.
+% 
+%%
+% If you have three points in the scatter plot and want the colors to be indexed into the color map, specify C as a three-element column vector.
+%
+% An RGB triplet is a three-element row vector whose elements specify the intensities of the red, green, and blue components of the color. The intensities must be in the range [0,1], for example, [0.4 0.6 0.7]. This table lists RGB triplet values that have equivalent color strings.
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>Long Name</b></p></td>
+%                           <td><p><b>Short Name</b></p></td>
+%                           <td><p><b>RGB Triplet</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'yellow'</tt></p></td>
+%                           <td><p><tt>'y'</tt></p></td>
+%                           <td><p><tt>[1 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'magenta'</tt></p></td>
+%                           <td><p><tt>'m'</tt></p></td>
+%                           <td><p><tt>[1 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'cyan'</tt></p></td>
+%                           <td><p><tt>'c'</tt></p></td>
+%                           <td><p><tt>[0 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'red'</tt></p></td>
+%                           <td><p><tt>'r'</tt></p></td>
+%                           <td><p><tt>[1 0 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'green'</tt></p></td>
+%                           <td><p><tt>'g'</tt></p></td>
+%                           <td><p><tt>[0 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'blue'</tt></p></td>
+%                           <td><p><tt>'b'</tt></p></td>
+%                           <td><p><tt>[0 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'white'</tt></p></td>
+%                           <td><p><tt>'w'</tt></p></td>
+%                           <td><p><tt>[1 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'black'</tt></p></td>
+%                           <td><p><tt>'k'</tt></p></td>
+%                           <td><p><tt>[0 0 0]</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+% </html>
+%
+% *Example:* |thingSpeakScatter(x,y,36,'blue');|
+%
+% *Example:* |thingSpeakScatter(x,y,36,[0 0 1]);|
+%
+% |filled| - Fill marker area, specified as |'filled'| to create a plot with a filled marker.
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN|.
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% 	<tbody>
+%       <tr valign="top">
+%           <td><p><tt>'Marker'</tt></p></td>
+%           <td><p>Marker symbol, specified as a string listed in the table.</p>          
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>String</b></p></td>
+%                           <td><p><b>Marker Symbol</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'o'</tt></p></td>
+%                           <td><p><tt>Circle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'square' or 's'</tt></p></td>
+%                           <td><p><tt>Square</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'diamond' or 'd'</tt></p></td>
+%                           <td><p><tt>Diamond</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'^'</tt></p></td>
+%                           <td><p><tt>Upward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'v'</tt></p></td>
+%                           <td><p><tt>Downward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'none'</tt></p></td>
+%                           <td><p><tt>No markers</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%               <p><b>Example:</b> <tt>thingSpeakScatter(x,y,'Marker','s');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YLabel'</tt></p></td>
+%           <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter(1:10,1:10,'YLabel','Y-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Xlabel'</tt></p></td>
+%           <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter((1:10,1:10,'XLabel','X-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Title'</tt></p></td>
+%           <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakScatter(1:10,1:10,'Title','Plot Title');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Grid'</tt></p></td>
+%           <td><p>Plot grid, specified as a string input turning the grid <tt>'on'</tt> or <tt>'off'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Grid','on');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'XGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%% See Also
+% <docthingspeakarea.html thingSpeakArea> | <docthingspeakplotyy.html thingSpeakPlotYY> | <docthingspeakread.html thingSpeakRead> | <docthingspeakplot.html thingSpeakPlot> | <docthingspeakstem.html thingSpeakStem> | <docthingspeakwrite.html thingSpeakWrite> | <docurlFilter.html urlFilter> 
+
+
+
+
+##### SOURCE END #####
+--></body></html>

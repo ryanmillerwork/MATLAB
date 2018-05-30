@@ -1,0 +1,171 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakAuthenticate</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakauthenticate.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3184</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">bae4a7a2-80ef-4144-b547-0286bd18aba0</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakAuthenticate</h1><!--introduction--><p>Store read/write API key</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Input Arguments</a></li><li><a href="#4">Examples</a></li><li><a href="#7">Name-Value Pair Arguments</a></li><li><a href="#8">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>thingSpeakAuthenticate(username,password)</tt></p><p><tt>thingSpeakAuthenticate(chId,Name,Value)</tt></p><h2>Description<a name="2"></a></h2><p><tt>thingSpeakAuthenticate(username,password)</tt> authenticates all the channels in the specified user account. <tt>username</tt> can be either a MathWorks&reg; account login ID, a ThingSpeak&#8482; account login ID, or an email ID. After authentication, you do not have to provide the read key or write key for any of the channels contained in this user account.</p><p><tt>thingSpeakAuthenticate(chId,Name,Value)</tt> allow authentication to only the channel specified by <tt>chId</tt> with optional Name,Value pair arguments.</p><h2>Input Arguments<a name="3"></a></h2><p><tt>username</tt> - username can be either be your MathWorks account login, ThingSpeak login, or email ID, specified as a character vector.</p><p><tt>password</tt> - Your password for the associated account, specified as a character vector.</p><p><tt>chID</tt> - The channel identification number, specified as a positive integer.</p><h2>Examples<a name="4"></a></h2><p>Authenticate using channel ID and API keys.</p><pre class="codeinput">thingSpeakAuthenticate(17504, <span class="keyword">...</span>
+    <span class="string">'ReadKey'</span>,<span class="string">'TJW6Y321SUGLKPGR'</span>,<span class="string">'WriteKey'</span>,<span class="string">'23ZLGORQN9TWHG2H'</span>);
+</pre><p>Authenticate with username and password.</p><pre class="codeinput">userName = <span class="string">'Enter ThingSpeak.com user name'</span>;
+passwd   = <span class="string">'Enter ThingSpeak.com password'</span>;
+thingSpeakAuthenticate(userName,passwd);
+</pre><p>Authenticate with email ID and password.</p><pre class="codeinput">emailID = <span class="string">'Enter ThingSpeak.com email ID'</span>;
+passwd  = <span class="string">'Enter ThingSpeak.com password'</span>;
+thingSpeakRead(emailID,passwd);
+</pre><h2>Name-Value Pair Arguments<a name="7"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt>.</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+  <tbody>
+      <tr valign="top">
+          <td><p><b>Name</b></p></td>
+          <td><p><b>Description</b></p></td>
+          <td><p><b>Data type</b></p></td>
+      </tr>
+      <tr valign="top">
+          <td><p><tt>'ReadKey'</tt></p></td>
+          <td><p><tt>Read API Key of the channel.</tt></p></td>
+          <td><p><tt>character vector</tt></p></td>
+      </tr>
+      <tr valign="top">
+          <td><p><tt>'WriteKey'</tt></p></td>
+          <td><p><tt>Write API Key of the channel.</tt></p></td>
+          <td><p><tt>character vector</tt></p></td>
+      </tr>
+  </tbody>
+</table>
+</p><p>Both the read and write API keys can be found on <a href="https://www.thingspeak.com">ThingSpeak.com</a>.</p><h2>See Also<a name="8"></a></h2><p><a href="docthingspeakread.html">thingSpeakRead</a> | <a href="docthingspeakwrite.html">thingSpeakWrite</a> | <a href="docurlFilter.html">urlFilter</a> | <a href="docthingspeakauthenticatedlist.html">thingSpeakAuthenticatedList</a> | <a href="docthingspeakclearauthentication">thingSpeakClearAuthentication</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakAuthenticate
+% Store read/write API key
+%% Syntax
+% |thingSpeakAuthenticate(username,password)|
+%
+% |thingSpeakAuthenticate(chId,Name,Value)|
+%% Description
+% |thingSpeakAuthenticate(username,password)| authenticates all the channels in the specified user account. |username| can be either a MathWorks(R) account login ID, a ThingSpeak(TM) account login ID, or an email ID. After authentication, you do not have to provide the read key or write key for any of the channels contained in this user account.
+%
+% |thingSpeakAuthenticate(chId,Name,Value)| allow authentication to only the channel specified by |chId| with optional Name,Value pair arguments.
+%% Input Arguments
+% |username| - username can be either be your MathWorks account login,
+% ThingSpeak login, or email ID, specified as a character vector.
+%
+% |password| - Your password for the associated account, specified as a character vector.
+%
+% |chID| - The channel identification number, specified as a positive integer.
+%% Examples
+%
+% Authenticate using channel ID and API keys.
+thingSpeakAuthenticate(17504, ...
+    'ReadKey','TJW6Y321SUGLKPGR','WriteKey','23ZLGORQN9TWHG2H');
+%%
+% Authenticate with username and password.
+userName = 'Enter ThingSpeak.com user name';
+passwd   = 'Enter ThingSpeak.com password';
+thingSpeakAuthenticate(userName,passwd); 
+%%
+% Authenticate with email ID and password.
+emailID = 'Enter ThingSpeak.com email ID';
+passwd  = 'Enter ThingSpeak.com password';
+thingSpeakRead(emailID,passwd);
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN|.
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+%   <tbody>
+%       <tr valign="top">
+%           <td><p><b>Name</b></p></td>
+%           <td><p><b>Description</b></p></td>
+%           <td><p><b>Data type</b></p></td>
+%       </tr>
+%       <tr valign="top">
+%           <td><p><tt>'ReadKey'</tt></p></td>
+%           <td><p><tt>Read API Key of the channel.</tt></p></td>
+%           <td><p><tt>character vector</tt></p></td>
+%       </tr>
+%       <tr valign="top">
+%           <td><p><tt>'WriteKey'</tt></p></td>
+%           <td><p><tt>Write API Key of the channel.</tt></p></td>
+%           <td><p><tt>character vector</tt></p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%
+% Both the read and write API keys can be found on <https://www.thingspeak.com ThingSpeak.com>.
+%% See Also
+% <docthingspeakread.html thingSpeakRead> | <docthingspeakwrite.html
+% thingSpeakWrite> | <docurlFilter.html urlFilter> |
+% <docthingspeakauthenticatedlist.html thingSpeakAuthenticatedList> |
+% <docthingspeakclearauthentication thingSpeakClearAuthentication>
+##### SOURCE END #####
+--></body></html>

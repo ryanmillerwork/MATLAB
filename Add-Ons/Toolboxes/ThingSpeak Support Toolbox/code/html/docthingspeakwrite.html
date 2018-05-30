@@ -1,0 +1,264 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakWrite</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakwrite.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3168</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">9e027917-0f28-43a3-8ca5-1bd4ac2ffd00</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakWrite</h1><!--introduction--><p>Write data to a ThingSpeak&#8482; channel</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Examples</a></li><li><a href="#20">Input Arguments</a></li><li><a href="#21">Name-Value Pair Arguments</a></li><li><a href="#22">Output Arguments</a></li><li><a href="#23">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>thingSpeakWrite(chId,data)</tt></p><p><tt>thingSpeakWrite(chId,data,Name,Value)</tt></p><p><tt>response = thingSpeakWrite(_)</tt></p><h2>Description<a name="2"></a></h2><p><tt>thingSpeakWrite(chId,data)</tt> writes the specified data to the specified channel.</p><p><tt>thingSpeakWrite(chId,data,Name,Value)</tt> uses additional options specified by one or more Name,Value pair arguments.</p><p><tt>response = thingSpeakWrite(_)</tt> returns the response provided by the ThingSpeak server on successful completion of the write operation.</p><h2>Examples<a name="3"></a></h2><p>Write a scalar value to Field 1 of a channel.</p><pre class="codeinput">thingSpeakWrite(17504,2.3,<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+</pre><p>Write numeric values to the first 4 consecutive fields [1,2,3,4] of a channel.</p><pre class="codeinput">thingSpeakWrite(17504,[2.3,1.2,3.2,0.1],<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+</pre><p>Write non-numeric data to the first 3 consecutive fields [1,2,3] of a channel.</p><pre class="codeinput">thingSpeakWrite(17504,{2.3,<span class="string">'on'</span>,<span class="string">'good'</span>},<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+</pre><p>Write the previous non-numeric values to non-consecutive fields [1,4,6] of a channel.</p><pre class="codeinput">thingSpeakWrite(17504,<span class="string">'Fields'</span>,[1,4,6],<span class="string">'Values'</span>,{2.3,<span class="string">'on'</span>,<span class="string">'good'</span>},<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+</pre><p>Write latitude and longitude to the channel feed along with values to consecutive fields.</p><pre class="codeinput">thingSpeakWrite(17504,{2.3,<span class="string">'on'</span>,<span class="string">'good'</span>},<span class="string">'Location'</span>,[-40,23],<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H)
+</pre><p>Write latitude, longitude, and altitude data to a channel, without adding values to fields.</p><pre class="codeinput">thingSpeakWrite(17504,<span class="string">'Location'</span>,[-40,23,3500],<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H)
+</pre><p>Write a timestamp for the value being written to a channel. The timestamp provided is interpreted as local time.</p><pre class="codeinput">tStamp = datetime(<span class="string">'2/6/2015 9:27:12'</span>,<span class="string">'InputFormat'</span>,<span class="string">'MM/dd/yyyy HH:mm:ss'</span>,<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+thingSpeakWrite(17504,[2.3,1.2,3.2,0.1],<span class="string">'TimeStamp'</span>,tStamp);
+</pre><p>Write values to a channel on a private ThingSpeak installation.</p><pre class="codeinput">thingSpeakWrite(17504,[2.3,1.2,3.2],<span class="string">'URL'</span>,<span class="string">'http://myServer.subnet.company.com:3000/'</span>,<span class="string">'WriteKey'</span>,23ZLGOCCU9VWHG2H);
+</pre><p>Write a matrix of values to your channel.</p><pre class="codeinput">data = randi(10,10,3); <span class="comment">% Generate Random Data</span>
+
+<span class="comment">% Generate timestamps for the data</span>
+tStamps = datetime(<span class="string">'now'</span>)-minutes(9):minutes(1):datetime(<span class="string">'now'</span>);
+
+channelID = (Enter Channel ID);
+writeKey  = (Enter Write API Key);
+
+<span class="comment">% Write 10 values to each field of your channel along with timestamps</span>
+thingSpeakWrite(channelID,data,<span class="string">'TimeStamp'</span>,tStamps,<span class="string">'WriteKey'</span>,writeKey);
+</pre><p>Write a table of values to your channel.</p><pre class="codeinput">dataField1 = randi(10,10,1); <span class="comment">% Generate random data</span>
+dataField2 = randi(10,10,1);
+
+<span class="comment">% Generate timestamps for the data</span>
+tStamps = [datetime(<span class="string">'now'</span>)-minutes(9):minutes(1):datetime(<span class="string">'now'</span>)]';
+
+<span class="comment">% Create table</span>
+dataTable = table(tStamps,dataField1,dataField2);
+channelID = (Enter Channel ID);
+writeKey  = (Enter Write API Key);
+
+<span class="comment">% Write 10 values to each field of your channel along with timestamps</span>
+thingSpeakWrite(channelID,dataTable,<span class="string">'WriteKey'</span>,writeKey);
+</pre><h2>Input Arguments<a name="20"></a></h2><p><tt>chId</tt> - The channel identification number specified as a positive integer.</p><p><tt>data</tt> - Data to write to channel, specified as a numeric scalar or numeric vector, a cell array, or a table. If you specify scalar data, the value is written to the first field in the channel (Field1). If you specify a vector or a 1-D cell array, data is written to consecutive fields starting with field 1, for the number of vectors or columns of data.</p><h2>Name-Value Pair Arguments<a name="21"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt> .</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tbody>
+		<tr valign="top">
+			<td><p><tt>'Fields'</tt></p></td>
+			<td><p>Channel fields IDs , specified as a comma-seperated pair consisting of <tt>'Fields'</tt> and a 1-by-n positive integer value.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,‘Fields',[1,2,3],'WriteKey','your write api key');</tt></p></td>
+		</tr>
+      <tr valign="top">
+          <td><p><tt>'Value'</tt></p></td>
+          <td><p>Data values, specified as a comma-seperated pair consisting of <tt>'Value'</tt> and numeric scalar, numeric vector, a cell array, or table values. Specify the data to be written to channel fields specified by the <tt>'Fields'</tt> parameter.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'Fields',[1,3,4],'Values',[1.1,3.2,4.1],'WriteKey','your write api key');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Location'</tt></p></td>
+          <td><p>Positional information of data in the channel, specified as a comma-seperated pair consisting of <tt>'Location'</tt> and numeric vector. Location information includes latitude, longitude, and altitude.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,(2,3,'on,'good'),'Location',[-40,23,200],'WriteKey','your write api key');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Timeout'</tt></p></td>
+          <td><p>Server connection timeout period, specified as a comma-seperated pair consisting of <tt>'Timeout'</tt> and a numeric value. The value must the number of seconds for <tt>thingSpeakWrite</tt> to connect to the server.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,(2,3,'on,'good'),'Location',[-40,23,200],'WriteKey','your write api key');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Timestamp'</tt></p></td>
+          <td><p>Timestamp of data values written to fields in the write channel, specified as a comma-seperated pair consisting of <tt>'Timestamp'</tt> and a value. The value must be a MATLAB® datetime value.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key','Timestamp',[datetime('2/6/2015 9:27:12')]);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'URL'</tt></p></td>
+          <td><p>URL of a private ThingSpeak server, specified as a comma-separated pair consisting of <tt>'URL'</tt> and a string value. The value must be a valid URL address.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key','URL','private.server.url');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'WriteKey'</tt></p></td>
+          <td><p>Write API key of the channel, specified as a comma-separated pair consisting of <tt>'WriteKey'</tt> and a string representing the channel write key. The API key allows you to write data to a channel. Save your write API key in a variable for convenience.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key');</tt></p></td>
+      </tr>
+  </tbody>
+</table>
+</p><h2>Output Arguments<a name="22"></a></h2><p><tt>response</tt> - Channel response of the write, returned as a structure. The fields of the structure indicate the values written to the fields of the channel.</p><h2>See Also<a name="23"></a></h2><p><a href="docthingspeakread.html">thingSpeakRead</a> | <a href="docurlfilter.html">urlFilter</a> | <a href="docthingspeakauthenticate.html">thingSpeakAuthenticate</a> | <a href="docthingspeakauthenticatedlist.html">thingSpeakAuthenticatedList</a> | <a href="docthingspeakclearauthentication.html">thingSpeakClearAuthentication</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakWrite
+% Write data to a ThingSpeak(TM) channel
+%% Syntax
+% |thingSpeakWrite(chId,data)|
+%
+% |thingSpeakWrite(chId,data,Name,Value)|
+%
+% |response = thingSpeakWrite(___)|
+%% Description
+% |thingSpeakWrite(chId,data)| writes the specified data to the specified channel.
+%
+% |thingSpeakWrite(chId,data,Name,Value)| uses additional options specified by one or more Name,Value pair arguments.
+%
+% |response = thingSpeakWrite(___)| returns the response provided by the ThingSpeak server on successful completion of the write operation.
+%% Examples
+%
+% Write a scalar value to Field 1 of a channel.
+thingSpeakWrite(17504,2.3,'WriteKey',23ZLGOCCU9VWHG2H);
+%%
+% Write numeric values to the first 4 consecutive fields [1,2,3,4] of a channel.
+thingSpeakWrite(17504,[2.3,1.2,3.2,0.1],'WriteKey',23ZLGOCCU9VWHG2H);
+%%
+% Write non-numeric data to the first 3 consecutive fields [1,2,3] of a channel.
+thingSpeakWrite(17504,{2.3,'on','good'},'WriteKey',23ZLGOCCU9VWHG2H);
+%%
+% Write the previous non-numeric values to non-consecutive fields [1,4,6] of a channel.
+thingSpeakWrite(17504,'Fields',[1,4,6],'Values',{2.3,'on','good'},'WriteKey',23ZLGOCCU9VWHG2H);
+%%
+% Write latitude and longitude to the channel feed along with values to consecutive fields.
+thingSpeakWrite(17504,{2.3,'on','good'},'Location',[-40,23],'WriteKey',23ZLGOCCU9VWHG2H)
+%%
+% Write latitude, longitude, and altitude data to a channel, without adding values to fields.
+thingSpeakWrite(17504,'Location',[-40,23,3500],'WriteKey',23ZLGOCCU9VWHG2H)
+%%
+% Write a timestamp for the value being written to a channel. The timestamp provided is interpreted as local time.
+tStamp = datetime('2/6/2015 9:27:12','InputFormat','MM/dd/yyyy HH:mm:ss','WriteKey',23ZLGOCCU9VWHG2H);
+thingSpeakWrite(17504,[2.3,1.2,3.2,0.1],'TimeStamp',tStamp);
+%%
+% Write values to a channel on a private ThingSpeak installation.
+thingSpeakWrite(17504,[2.3,1.2,3.2],'URL','http://myServer.subnet.company.com:3000/','WriteKey',23ZLGOCCU9VWHG2H);
+%%
+% Write a matrix of values to your channel.
+
+data = randi(10,10,3); % Generate Random Data
+
+% Generate timestamps for the data
+tStamps = datetime('now')-minutes(9):minutes(1):datetime('now');
+
+channelID = (Enter Channel ID);
+writeKey  = (Enter Write API Key);
+
+% Write 10 values to each field of your channel along with timestamps
+thingSpeakWrite(channelID,data,'TimeStamp',tStamps,'WriteKey',writeKey);
+%%
+% Write a table of values to your channel.
+
+dataField1 = randi(10,10,1); % Generate random data
+dataField2 = randi(10,10,1);
+
+% Generate timestamps for the data
+tStamps = [datetime('now')-minutes(9):minutes(1):datetime('now')]';
+
+% Create table
+dataTable = table(tStamps,dataField1,dataField2);
+channelID = (Enter Channel ID);
+writeKey  = (Enter Write API Key);
+
+% Write 10 values to each field of your channel along with timestamps
+thingSpeakWrite(channelID,dataTable,'WriteKey',writeKey);
+%% Input Arguments
+% |chId| - The channel identification number specified as a positive integer.
+%
+% |data| - Data to write to channel, specified as a numeric scalar or numeric vector, a cell array, or a table. If you specify scalar data, the value is written to the first field in the channel (Field1). If you specify a vector or a 1-D cell array, data is written to consecutive fields starting with field 1, for the number of vectors or columns of data.
+%
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN| .
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% 	<tbody>
+% 		<tr valign="top">
+% 			<td><p><tt>'Fields'</tt></p></td>
+% 			<td><p>Channel fields IDs , specified as a comma-seperated pair consisting of <tt>'Fields'</tt> and a 1-by-n positive integer value.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,‘Fields',[1,2,3],'WriteKey','your write api key');</tt></p></td>
+% 		</tr>
+%       <tr valign="top">
+%           <td><p><tt>'Value'</tt></p></td>
+%           <td><p>Data values, specified as a comma-seperated pair consisting of <tt>'Value'</tt> and numeric scalar, numeric vector, a cell array, or table values. Specify the data to be written to channel fields specified by the <tt>'Fields'</tt> parameter.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'Fields',[1,3,4],'Values',[1.1,3.2,4.1],'WriteKey','your write api key');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Location'</tt></p></td>
+%           <td><p>Positional information of data in the channel, specified as a comma-seperated pair consisting of <tt>'Location'</tt> and numeric vector. Location information includes latitude, longitude, and altitude.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,(2,3,'on,'good'),'Location',[-40,23,200],'WriteKey','your write api key');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Timeout'</tt></p></td>
+%           <td><p>Server connection timeout period, specified as a comma-seperated pair consisting of <tt>'Timeout'</tt> and a numeric value. The value must the number of seconds for <tt>thingSpeakWrite</tt> to connect to the server.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,(2,3,'on,'good'),'Location',[-40,23,200],'WriteKey','your write api key');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Timestamp'</tt></p></td>
+%           <td><p>Timestamp of data values written to fields in the write channel, specified as a comma-seperated pair consisting of <tt>'Timestamp'</tt> and a value. The value must be a MATLAB® datetime value.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key','Timestamp',[datetime('2/6/2015 9:27:12')]);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'URL'</tt></p></td>
+%           <td><p>URL of a private ThingSpeak server, specified as a comma-separated pair consisting of <tt>'URL'</tt> and a string value. The value must be a valid URL address.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key','URL','private.server.url');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'WriteKey'</tt></p></td>
+%           <td><p>Write API key of the channel, specified as a comma-separated pair consisting of <tt>'WriteKey'</tt> and a string representing the channel write key. The API key allows you to write data to a channel. Save your write API key in a variable for convenience.</p><p><b>Example:</b> <tt>thingSpeakWrite(17504,'WriteKey','your write api key');</tt></p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%% Output Arguments
+% |response| - Channel response of the write, returned as a structure. The fields of the structure indicate the values written to the fields of the channel.
+%% See Also
+%%
+% <docthingspeakread.html thingSpeakRead> | <docurlfilter.html urlFilter> |
+% <docthingspeakauthenticate.html thingSpeakAuthenticate> |
+% <docthingspeakauthenticatedlist.html thingSpeakAuthenticatedList> |
+% <docthingspeakclearauthentication.html thingSpeakClearAuthentication>
+##### SOURCE END #####
+--></body></html>

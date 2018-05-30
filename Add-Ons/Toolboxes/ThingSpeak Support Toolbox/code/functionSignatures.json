@@ -1,0 +1,182 @@
+{
+"thingSpeakRead":
+{
+    "inputs":
+    [
+        {"name":"channel_Id"  , "kind":"required" , "type":"numeric"  },
+        {"name":"DateRange"   , "kind":"namevalue", "type":"datetime" },
+        {"name":"Fields"      , "kind":"namevalue", "type":"numeric"  },
+        {"name":"NumDays"     , "kind":"namevalue", "type":"numeric"  },
+        {"name":"NumMinutes"  , "kind":"namevalue", "type":"numeric"  },
+        {"name":"NumPoints"   , "kind":"namevalue", "type":"numeric"  },
+        {"name":"OutputFormat", "kind":"namevalue", "type":"choices={'matrix', 'table', 'timetable'}" },
+        {"name":"ReadKey"     , "kind":"namevalue", "type":"char"     },
+        {"name":"Location"    , "kind":"namevalue", "type":"logical"  },
+        {"name":"Timeout"     , "kind":"namevalue", "type":"numeric"  },
+        {"name":"URL"         , "kind":"namevalue", "type":"char"     }        
+    ]
+},
+
+"thingSpeakWrite":
+{
+    "inputs":
+    [
+        {"name":"channel_Id"  , "kind":"required"   , "type":"numeric"   },
+        {"name":"Values"      , "kind":"namevalue"  , "type":"numeric" },
+        {"name":"Fields"      , "kind":"namevalue"  , "type":"numeric"  },
+        {"name":"Location"    , "kind":"namevalue"  , "type":"numeric"  },
+        {"name":"Timestamp"   , "kind":"namevalue"  , "type":"{datetime, table}"  },
+        {"name":"Timeout"     , "kind":"namevalue"  , "type":"numeric"  },
+        {"name":"URL"         , "kind":"namevalue"  , "type":"char"  },
+        {"name":"WriteKey"    , "kind":"namevalue"  , "type":"char"  }
+    ]
+},
+
+"thingSpeakAuthenticate":
+{
+    "inputs":
+    [
+        {"name":"channel_Id"  , "kind":"positional" , "type":"numeric"   },
+        {"name":"username"  , "kind":"positional" , "type":"char"   },
+        {"name":"password"  , "kind":"positional" , "type":"char"   },
+        {"name":"ReadKey"     , "kind":"namevalue", "type":"char"   },
+        {"name":"WriteKey"     , "kind":"namevalue", "type":"char"  }
+    ]
+},
+
+"thingSpeakAuthenticatedList":
+{
+    "inputs":
+    [    
+        {"name":"channel_Id"  , "kind":"positional" , "type":"numeric"   }
+    ]
+},
+
+"thingSpeakClearAuthenticatedList":
+{
+    "inputs":
+    [
+        {"name":"channel_Id"  , "kind":"positional" , "type":"numeric"   },
+        {"name":"username"    , "kind":"positional" , "type":"char"   }
+    ]
+},
+
+
+"urlfilter":
+{
+    "inputs":
+    [
+       {"name":"URL"  , "kind":"positional" , "type":"char"   },
+       {"name":"target"    , "kind":"positional" , "type":"char"   },
+       {"name":"numNumbers"    , "kind":"positional" , "type":"numeric"   },
+       {"name":"direction"    , "kind":"positional" , "type":"choices = [{'forward'}, {'backward'}]"   }
+    ]
+},
+
+
+"thingSpeakPlot":
+{
+    "inputs":
+    [
+        {"name":"X"           , "kind":"positional" , "type":"numeric"   },
+        {"name":"Y"           , "kind":"flag"       , "type":"numeric"   },
+        {"name":"s"           , "kind":"flag"       , "type":"char"      },
+        {"name":"Color"       , "kind":"namevalue"  , "type":"{char, numeric}"},
+        {"name":"LineStyle"   , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"LineWidth"   , "kind":"namevalue"  , "type":"numeric"   },
+        {"name":"Marker"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Grid"        , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Title"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"XLabel"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YLabel"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YScale"      , "kind":"namevalue"  , "type":"choices={'Linear', 'Log'}"},
+        {"name":"XGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Legend"      , "kind":"namevalue"  , "type":"cell"      }
+    ]
+},
+
+"thingSpeakArea":
+{
+    "inputs":
+    [
+        {"name":"X"           , "kind":"positional" , "type":"numeric"   },
+        {"name":"Y"           , "kind":"flag"       , "type":"numeric"   },        
+        {"name":"FaceColor"   , "kind":"namevalue"  , "type":"{char, numeric}"   },        
+        {"name":"EdgeColor"   , "kind":"namevalue"  , "type":"{char, numeric}"   },
+        {"name":"LineStyle"   , "kind":"namevalue"  , "type":"char"      },   
+        {"name":"LineWidth"   , "kind":"namevalue"  , "type":"numeric"   },
+        {"name":"YLabel"      , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"XLabel"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Title"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Grid"        , "kind":"namevalue"  , "type":"char"      },
+        {"name":"XGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Legend"      , "kind":"namevalue"  , "type":"cell"      }
+    ]
+},
+
+"thingSpeakStem":
+{
+    "inputs":
+    [
+        {"name":"X"           , "kind":"positional" , "type":"numeric"   },
+        {"name":"Y"           , "kind":"flag"       , "type":"numeric"   },
+        {"name":"s"           , "kind":"flag"       , "type":"char"      },
+        {"name":"Color"       , "kind":"namevalue"  , "type":"{char, numeric}"},        
+        {"name":"Marker"      , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"Title"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"XLabel"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YLabel"      , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"Grid"        , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"XGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"Legend"      , "kind":"namevalue"  , "type":"cell"      }
+    ]
+},
+
+"thingSpeakScatter":
+{
+    "inputs":
+    [       
+        {"name":"X"           , "kind":"positional" , "type":"numeric"   },
+        {"name":"Y"           , "kind":"positional" , "type":"numeric"   },
+        {"name":"s"           , "kind":"flag"       , "type":"char"      },        
+        {"name":"c"           , "kind":"flag"       , "type":"{char, numeric}"   },        
+        {"name":"filled"      , "kind":"positional" , "type":"char"      },
+        {"name":"Marker"      , "kind":"namevalue"  , "type":"char"      },   
+        {"name":"Title"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"XLabel"      , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YLabel"      , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"Grid"        , "kind":"namevalue"  , "type":"char"      },        
+        {"name":"XGrid"       , "kind":"namevalue"  , "type":"char"      },
+        {"name":"YGrid"       , "kind":"namevalue"  , "type":"char"      }       
+    ]
+},
+
+"thingSpeakPlotYY":
+{
+    "inputs":
+    [
+        {"name":"X1"           , "kind":"positional" , "type":"numeric"  },
+        {"name":"Y1"           , "kind":"positional" , "type":"numeric"  },
+        {"name":"X2"           , "kind":"positional" , "type":"numeric"  },
+        {"name":"Y2"           , "kind":"positional" , "type":"numeric"  },
+        {"name":"Color1"       , "kind":"namevalue"  , "type":"{char, numeric}"      },
+        {"name":"Color2"       , "kind":"namevalue"  , "type":"{char, numeric}"      },
+        {"name":"LineWidth1"   , "kind":"namevalue"  , "type":"numeric"  },
+        {"name":"LineWidth2"   , "kind":"namevalue"  , "type":"numeric"  },
+        {"name":"YScale1"      , "kind":"namevalue"  , "type":"choices=[{'linear'}, {'log'}]"   },
+        {"name":"YScale2"      , "kind":"namevalue"  , "type":"choices=[{'linear'}, {'log'}]"   },
+        {"name":"Grid"         , "kind":"namevalue"  , "type":"char"     },        
+        {"name":"YLabel1"      , "kind":"namevalue"  , "type":"char"     },        
+        {"name":"YLabel2"      , "kind":"namevalue"  , "type":"char"     },
+        {"name":"XLabel"       , "kind":"namevalue"  , "type":"char"     },
+        {"name":"Title"        , "kind":"namevalue"  , "type":"char"     },
+        {"name":"XGrid"        , "kind":"namevalue"  , "type":"char"     },
+        {"name":"YGrid1"       , "kind":"namevalue"  , "type":"char"     },
+        {"name":"YGrid2"       , "kind":"namevalue"  , "type":"char"     }
+    ]
+}
+
+}

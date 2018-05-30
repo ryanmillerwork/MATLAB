@@ -1,0 +1,265 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakRead</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakread.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3174</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">09f54521-2e06-44ca-ac1f-6eced3ba1e50</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakRead</h1><!--introduction--><p>Read data stored in ThingSpeak&#8482; channel</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Examples</a></li><li><a href="#12">Input Arguments</a></li><li><a href="#13">Name-Value Pair Arguments</a></li><li><a href="#14">Output Arguments</a></li><li><a href="#16">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>[data,timestamps,chInfo] = thingSpeakRead(chId)</tt></p><p><tt>[data,timestamps,chInfo] = thingSpeakRead(chId,Name,Value)</tt></p><h2>Description<a name="2"></a></h2><p><tt>[data,timestamps,chInfo] = thingSpeakRead(chId)</tt> reads the most recent data from all fields of the specified public channel on <a href="https://thingspeak.com/">ThingSpeak.com</a> and returns the data, timestamp, and channel information.</p><p><tt>[data,timestamps,chInfo] = thingSpeakRead(chId,Name,Value)</tt> uses additional options specified by one or more Name,Value pair arguments.</p><h2>Examples<a name="3"></a></h2><p>Retrieve the most recent result for all fields of a public channel including the timestamp.</p><pre class="codeinput">[data,time] = thingSpeakRead(12397);
+</pre><p>Retrieve the data for August 8, 2014 through August 12, 2014 for fields 1 and 4 of a public channel, including the timestamp, and channel information.</p><pre class="codeinput">[data,time,channelInfo] = thingSpeakRead(12397,<span class="string">'Fields'</span>,[1 4],<span class="string">'DateRange'</span>,[datetime(<span class="string">'Aug 8, 2014'</span>),datetime(<span class="string">'Aug 12, 2014'</span>)]);
+</pre><p>Retrieve the last 10 points of data from fields 1 and 4 of a public channel. Return the data and timestamps in a table, including channel information.</p><pre class="codeinput">[data,chInfo] = thingSpeakRead(12397,<span class="string">'Fields'</span>,[1 4],<span class="string">'NumPoints'</span>,10,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Retrieve the last five minutes of data from fields 1 and 4 of a public channel. Return only the data.</p><pre class="codeinput">data = thingSpeakRead(12397,<span class="string">'Fields'</span>,[1,4],<span class="string">'NumMinutes'</span>,5,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Read the last two days of data from fields 1 and 4 of a public channel. Return only the data.</p><pre class="codeinput">data = thingSpeakRead(12397,<span class="string">'Fields'</span>,[1,4],<span class="string">'NumDays'</span>,2,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Retrieve the most recent result for all fields of a private channel.</p><pre class="codeinput">data = thingSpeakRead(chId,<span class="string">'ReadKey'</span>,<span class="string">'Your.Read.API.Key'</span>,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Retrieve latitude, longitude and altitude data along with the last 10 channel updates for all fields in a public channel and return the data as a table.</p><pre class="codeinput">data = thingSpeakRead(chId,<span class="string">'NumPoints'</span>,10,<span class="string">'Location'</span>,true,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Set the timeout for reading 8000 data points from field 1 of a public channel.</p><pre class="codeinput">data = thingSpeakRead(12397,<span class="string">'Fields'</span>,1,<span class="string">'NumPoints'</span>,8000,<span class="string">'Timeout'</span>,10,<span class="string">'OutputFormat'</span>,<span class="string">'table'</span>);
+</pre><p>Retrieve the last 10 points for all three fields of a public channel on a private ThingSpeak server installation.</p><pre class="codeinput">myURL = serverURL; <span class="comment">% Generate Random Data</span>
+[data,time] = thingSpeakRead(6,<span class="string">'NumPoints'</span>,10,<span class="string">'URL'</span>,myURL);
+</pre><h2>Input Arguments<a name="12"></a></h2><p><tt>chId</tt> - The channel identification number specified as a positive integer.</p><h2>Name-Value Pair Arguments<a name="13"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt> .</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tbody>
+		<tr valign="top">
+			<td><p><tt>'DateRange'</tt></p></td>
+			<td><p>Range of data to be returned, specified as a comma-separated pair consisting of <tt>'DateRange'</tt> array. The value must have [startdate,enddate], in MATLAB® datetime values. ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your ranges or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>DateRange</tt> with <tt>NumDays</tt> or <tt>NumMinutes</tt>.</p><b>Example:</b><tt>thingSpeakRead(12397,'DateRange',[datetime('Aug 8, 2014'),datetime('Aug 12, 2014')]);</tt></p></td>
+		</tr>
+      <tr valign="top">
+          <td><p><tt>'Fields'</tt></p></td>
+          <td><p>Channel field IDs specified as a comma-separated pair consisting of <tt>'Fields'</tt> and numeric value. Specify the channel ID from which you need to retrieve data.</p><p><b>Example:</b><tt>thingSpeakWrite(12397,'Fields',[1,3,4]);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Location'</tt></p></td>
+          <td><p>Positional information of data in the channel, specified as a comma-seperated pair consisting of <tt>'Location'</tt> and a logical value. Location information includes latitude, longitude, and altitude.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'Location',true);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'NumDays'</tt></p></td>
+          <td><p>Number of days of data, specified as a comma-separated pair consisting of <tt>'NumDays'</tt> and a numeric value, to extract data from. Number of days is measured in 24-hour periods. ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number of days or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>NumDays</tt> with <tt>DateRange</tt> or <tt>NumMinutes</tt>.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumDays',2);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'NumMinutes'</tt></p></td>
+          <td><p>Number of minutes of data, specified as a comma-separated pair consisting of <tt>'NumMinutes'</tt> and a value, to extract data from. Number of minutes of data to retrieve is measured from the current time, (time the command is issued). ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number minutes or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>NumMinutes</tt> with <tt>DateRange</tt> or <tt>NumDays</tt>.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumMinutes',20);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'NumPoints'</tt></p></td>
+          <td><p>Number of data points, specified as a comma-separated pair consisting of <tt>'NumPoints'</tt> numeric value, to extract data from. The number of points or rows of data is counted from the current time (time the command is issued). ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number minutes or make multiple calls if you need more than 8000 points of data.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumPoints',200);</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'OutputFormat'</tt></p></td>
+          <td><p>Class of the output data, specified as a comma-separated pair consisting of <tt>'OutputFormat'</tt> and a string value. Valid values are <tt>'matrix'</tt> and <tt>'table'</tt>. Table is output with [table, channelInfo] and contains the timestamps and the data from the fields of the channel.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'OutputFormat','table');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Timeout'</tt></p></td>
+          <td><p>Server connection timeout period, specified as a comma-seperated pair consisting of <tt>'Timeout'</tt> and a numeric value. The value must the number of seconds for <tt>thingSpeakRead</tt> to connect to the server.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'Timeout',15);;</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'URL'</tt></p></td>
+          <td><p>URL of a private ThingSpeak server, specified as a comma-separated pair consisting of <tt>'URL'</tt> and a string value. The value must be a valid URL address.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'URL','http://private.server.url');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'ReadKey'</tt></p></td>
+          <td><p>Read API key of the channel, specified as a comma-separated pair consisting of '<tt>'ReadKey'</tt> and a string value representing the channel read API key. The Read API key allows you to read data from a private channel. You do not need a Read API key if you are reading data from a public channel. Save your Read API key in a variable for convenience.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'ReadKey','F6CSCVKX42WFZN9Y');</tt></p></td>
+      </tr>
+  </tbody>
+</table>
+</p><h2>Output Arguments<a name="14"></a></h2><p><tt>data</tt> - Data from the channel, returned as an array or a table.</p><p><tt>timestamps</tt> - Timestamp of each data element, returned as an array of datetime.</p><p><tt>chInfo</tt> - Channel information returned as a structure.</p><p><b>Example:</b></p><pre class="codeinput">        ChannelID: 12397
+             Name: <span class="string">'WeatherStation'</span>
+      Description: <span class="string">'MathWorks Weather Station, West Garage, Natick, MA 01760, USA'</span>
+         Latitude: 42.2997
+        Longitude: -71.3505
+         Altitude: 60
+          Created: [1x1 datetime]
+          Updated: [1x1 datetime]
+        LastEntry: 188212
+FieldDescriptions: {1x8 cell}
+         FieldIDs: [1 2 3 4 5 6 7 8]
+              URL: <span class="string">'https://api.thingspeak.com/channels/12397/feed.json?'</span>
+</pre><h2>See Also<a name="16"></a></h2><p><a href="docthingspeakwrite.html">thingSpeakWrite</a> | <a href="docurlfilter.html">urlFilter</a> | <a href="docthingspeakauthenticate.html">thingSpeakAuthenticate</a> | <a href="docthingspeakauthenticatedlist.html">thingSpeakAuthenticatedList</a> | <a href="docthingspeakclearauthentication.html">thingSpeakClearAuthentication</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakRead
+% Read data stored in ThingSpeak(TM) channel
+%% Syntax
+% |[data,timestamps,chInfo] = thingSpeakRead(chId)|
+%
+% |[data,timestamps,chInfo] = thingSpeakRead(chId,Name,Value)|
+%% Description
+% |[data,timestamps,chInfo] = thingSpeakRead(chId)| reads the most recent data from all fields of the specified public channel on <https://thingspeak.com/ ThingSpeak.com> and returns the data, timestamp, and channel information.
+%
+% |[data,timestamps,chInfo] = thingSpeakRead(chId,Name,Value)| uses additional options specified by one or more Name,Value pair arguments.
+%% Examples
+%
+% Retrieve the most recent result for all fields of a public channel including the timestamp.
+[data,time] = thingSpeakRead(12397);
+%%
+% Retrieve the data for August 8, 2014 through August 12, 2014 for fields 1 and 4 of a public channel, including the timestamp, and channel information.
+[data,time,channelInfo] = thingSpeakRead(12397,'Fields',[1 4],'DateRange',[datetime('Aug 8, 2014'),datetime('Aug 12, 2014')]);
+%%
+% Retrieve the last 10 points of data from fields 1 and 4 of a public channel. Return the data and timestamps in a table, including channel information.
+[data,chInfo] = thingSpeakRead(12397,'Fields',[1 4],'NumPoints',10,'OutputFormat','table');
+%%
+% Retrieve the last five minutes of data from fields 1 and 4 of a public channel. Return only the data.
+data = thingSpeakRead(12397,'Fields',[1,4],'NumMinutes',5,'OutputFormat','table');
+%%
+% Read the last two days of data from fields 1 and 4 of a public channel. Return only the data.
+data = thingSpeakRead(12397,'Fields',[1,4],'NumDays',2,'OutputFormat','table');
+%%
+% Retrieve the most recent result for all fields of a private channel.
+data = thingSpeakRead(chId,'ReadKey','Your.Read.API.Key','OutputFormat','table');
+%%
+% Retrieve latitude, longitude and altitude data along with the last 10 channel updates for all fields in a public channel and return the data as a table.
+data = thingSpeakRead(chId,'NumPoints',10,'Location',true,'OutputFormat','table');
+%%
+% Set the timeout for reading 8000 data points from field 1 of a public channel.
+data = thingSpeakRead(12397,'Fields',1,'NumPoints',8000,'Timeout',10,'OutputFormat','table');
+%%
+% Retrieve the last 10 points for all three fields of a public channel on a private ThingSpeak server installation.
+
+myURL = serverURL; % Generate Random Data
+[data,time] = thingSpeakRead(6,'NumPoints',10,'URL',myURL);
+%% Input Arguments
+% |chId| - The channel identification number specified as a positive integer.
+%
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN| .
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% 	<tbody>
+% 		<tr valign="top">
+% 			<td><p><tt>'DateRange'</tt></p></td>
+% 			<td><p>Range of data to be returned, specified as a comma-separated pair consisting of <tt>'DateRange'</tt> array. The value must have [startdate,enddate], in MATLAB® datetime values. ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your ranges or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>DateRange</tt> with <tt>NumDays</tt> or <tt>NumMinutes</tt>.</p><b>Example:</b><tt>thingSpeakRead(12397,'DateRange',[datetime('Aug 8, 2014'),datetime('Aug 12, 2014')]);</tt></p></td>
+% 		</tr>
+%       <tr valign="top">
+%           <td><p><tt>'Fields'</tt></p></td>
+%           <td><p>Channel field IDs specified as a comma-separated pair consisting of <tt>'Fields'</tt> and numeric value. Specify the channel ID from which you need to retrieve data.</p><p><b>Example:</b><tt>thingSpeakWrite(12397,'Fields',[1,3,4]);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Location'</tt></p></td>
+%           <td><p>Positional information of data in the channel, specified as a comma-seperated pair consisting of <tt>'Location'</tt> and a logical value. Location information includes latitude, longitude, and altitude.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'Location',true);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'NumDays'</tt></p></td>
+%           <td><p>Number of days of data, specified as a comma-separated pair consisting of <tt>'NumDays'</tt> and a numeric value, to extract data from. Number of days is measured in 24-hour periods. ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number of days or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>NumDays</tt> with <tt>DateRange</tt> or <tt>NumMinutes</tt>.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumDays',2);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'NumMinutes'</tt></p></td>
+%           <td><p>Number of minutes of data, specified as a comma-separated pair consisting of <tt>'NumMinutes'</tt> and a value, to extract data from. Number of minutes of data to retrieve is measured from the current time, (time the command is issued). ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number minutes or make multiple calls if you need more than 8000 points of data.</p><p><b>Note:</b> You cannot use <tt>NumMinutes</tt> with <tt>DateRange</tt> or <tt>NumDays</tt>.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumMinutes',20);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'NumPoints'</tt></p></td>
+%           <td><p>Number of data points, specified as a comma-separated pair consisting of <tt>'NumPoints'</tt> numeric value, to extract data from. The number of points or rows of data is counted from the current time (time the command is issued). ThingSpeak server limits the number of points returned to a maximum of 8000. Adjust your number minutes or make multiple calls if you need more than 8000 points of data.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'NumPoints',200);</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'OutputFormat'</tt></p></td>
+%           <td><p>Class of the output data, specified as a comma-separated pair consisting of <tt>'OutputFormat'</tt> and a string value. Valid values are <tt>'matrix'</tt> and <tt>'table'</tt>. Table is output with [table, channelInfo] and contains the timestamps and the data from the fields of the channel.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'OutputFormat','table');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Timeout'</tt></p></td>
+%           <td><p>Server connection timeout period, specified as a comma-seperated pair consisting of <tt>'Timeout'</tt> and a numeric value. The value must the number of seconds for <tt>thingSpeakRead</tt> to connect to the server.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'Timeout',15);;</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'URL'</tt></p></td>
+%           <td><p>URL of a private ThingSpeak server, specified as a comma-separated pair consisting of <tt>'URL'</tt> and a string value. The value must be a valid URL address.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'URL','http://private.server.url');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'ReadKey'</tt></p></td>
+%           <td><p>Read API key of the channel, specified as a comma-separated pair consisting of '<tt>'ReadKey'</tt> and a string value representing the channel read API key. The Read API key allows you to read data from a private channel. You do not need a Read API key if you are reading data from a public channel. Save your Read API key in a variable for convenience.</p><p><b>Example:</b><tt>thingSpeakRead(12397,'ReadKey','F6CSCVKX42WFZN9Y');</tt></p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%% Output Arguments
+% |data| - Data from the channel, returned as an array or a table.
+%
+% |timestamps| - Timestamp of each data element, returned as an array of datetime.
+%
+% |chInfo| - Channel information returned as a structure.
+%%
+% *Example:* 
+        ChannelID: 12397
+             Name: 'WeatherStation'
+      Description: 'MathWorks Weather Station, West Garage, Natick, MA 01760, USA'
+         Latitude: 42.2997
+        Longitude: -71.3505
+         Altitude: 60
+          Created: [1x1 datetime]
+          Updated: [1x1 datetime]
+        LastEntry: 188212
+FieldDescriptions: {1x8 cell}
+         FieldIDs: [1 2 3 4 5 6 7 8]
+              URL: 'https://api.thingspeak.com/channels/12397/feed.json?'
+%% See Also
+%%
+% <docthingspeakwrite.html thingSpeakWrite> | <docurlfilter.html urlFilter> |
+% <docthingspeakauthenticate.html thingSpeakAuthenticate> |
+% <docthingspeakauthenticatedlist.html thingSpeakAuthenticatedList> |
+% <docthingspeakclearauthentication.html thingSpeakClearAuthentication>
+##### SOURCE END #####
+--></body></html>

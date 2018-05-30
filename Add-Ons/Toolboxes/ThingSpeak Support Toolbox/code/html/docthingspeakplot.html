@@ -1,0 +1,593 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakPlot</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakplot.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3200</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">e9a5f164-795d-496d-bde1-18159c711184</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakPlot</h1><!--introduction--><p>Create 2-D line plot</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Examples</a></li><li><a href="#12">Input Arguments</a></li><li><a href="#13">Name-Value Pair Arguments</a></li><li><a href="#14">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>thingSpeakPlot(X,Y)</tt></p><p><tt>thingSpeakPlot(Y)</tt></p><p><tt>thingSpeakPlot(X,Y,Name,Value)</tt></p><h2>Description<a name="2"></a></h2><p><tt>thingSpeakPlot(X,Y)</tt> plots vector Y versus vector X. If X or Y is a matrix, the vector is plotted versus the rows or columns of the matrix, whichever line up. If X is a scalar and Y is a vector, disconnected line objects are created and plotted as discrete points vertically at X.</p><p><tt>thingSpeakPlot(Y)</tt> plots the columns of Y versus their index.</p><p><tt>thingSpeakPlot(X,Y,Name,Value)</tt> allows you to specify various line types, colors, and data point symbols.</p><h2>Examples<a name="3"></a></h2><p><b>Create Sine Wave Plot</b></p><p>Create a line plot of a sine wave.</p><pre class="codeinput">x = 0:pi/100:2*pi;
+y = sin(x);
+thingSpeakPlot(x,y)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_01.png" alt=""> <p><b>Create Matrix line Plot</b></p><p>Create line charts from a magic 4 matrix.</p><pre class="codeinput">Y = magic(4);
+thingSpeakPlot(Y)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_02.png" alt=""> <p><b>Create Plot with Specific Line Properties</b></p><p>Create line chart with specific line properties.</p><p>Specify the following properties:</p><div><ul><li>Line style: dashed line</li><li>Line width: 2</li><li>Line color: green</li><li>Marker type: square</li></ul></div><pre class="codeinput">x = -pi:pi/10:pi;
+y = tan(sin(x)) - sin(tan(x));
+thingSpeakPlot(x,y,<span class="string">'LineStyle'</span>,<span class="string">'--'</span>,<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,<span class="string">'green'</span>,<span class="string">'Marker'</span>,<span class="string">'s'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_03.png" alt=""> <p><b>Create Plot with Log Scale</b></p><p>Create a line plot on a log scale.</p><pre class="codeinput">x = 0:0.1:10;
+y = exp(x);
+thingSpeakPlot(x,y,<span class="string">'YScale'</span>,<span class="string">'log'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_04.png" alt=""> <p><b>Create Plot with Grid</b></p><p>Create a plot with a grid in the background.</p><pre class="codeinput">x = linspace(0,10);
+y = sin(x);
+thingSpeakPlot(x,y,<span class="string">'Grid'</span>,<span class="string">'on'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_05.png" alt=""> <p><b>Create Plots with Date Labels</b></p><p>Create a line plot with date values between 1900 and 1990, with 10 year intervals on the x-axis.</p><pre class="codeinput">t = (1900:10:1990)';
+p = [75.995  91.972 105.711 123.203 131.669 <span class="keyword">...</span>
+    150.697 179.323 203.212 226.505 249.633]';
+thingSpeakPlot(datetime(t,1,1),p,<span class="string">'Grid'</span>,<span class="string">'on'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_06.png" alt=""> <p>Create line plot datetime values on the x-axis, in a sequence of dates. Display 10 calendar days.</p><pre class="codeinput">t = datetime(2015,6,28) + caldays(1:10);
+y = rand(1,10);
+thingSpeakPlot(t,y,<span class="string">'Grid'</span>,<span class="string">'on'</span>)
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_07.png" alt=""> <p><b>Create Plot with Title and Axis Labels</b></p><p>Create a line plot with a title and axis labels.</p><pre class="codeinput">thingSpeakPlot([1:10].^2,<span class="string">'XLabel'</span>,<span class="string">'Time'</span>,<span class="string">'YLabel'</span>,<span class="string">'Population'</span>,<span class="string">'Title'</span>,<span class="string">'Population in the 1900s'</span>);
+</pre><img vspace="5" hspace="5" src="docthingspeakplot_08.png" alt=""> <h2>Input Arguments<a name="12"></a></h2><p><tt>X</tt> - X values, specified as a scalar, a vector, or a matrix. X can be a numeric array, logical array, or datetime array.</p><p><tt>Y</tt> - Y values, specified as a scalar, a vector, or a matrix. Y can be a numeric array, or logical array.</p><h2>Name-Value Pair Arguments<a name="13"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Color','red','LineStyle',':','Marker','o')</tt></p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tbody>
+		<tr valign="top">
+			<td><p><tt>'Color'</tt></p></td>
+			<td><p>Line color, specified as an RGB triplet or a color string. The default RGB triplet value of [0 0 1] corresponds to blue.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>Long Name</b></p></td>
+                          <td><p><b>Short Name</b></p></td>
+                          <td><p><b>RGB Triplet</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'yellow'</tt></p></td>
+                          <td><p><tt>'y'</tt></p></td>
+                          <td><p><tt>[1 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'magenta'</tt></p></td>
+                          <td><p><tt>'m'</tt></p></td>
+                          <td><p><tt>[1 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'cyan'</tt></p></td>
+                          <td><p><tt>'c'</tt></p></td>
+                          <td><p><tt>[0 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'red'</tt></p></td>
+                          <td><p><tt>'r'</tt></p></td>
+                          <td><p><tt>[1 0 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'green'</tt></p></td>
+                          <td><p><tt>'g'</tt></p></td>
+                          <td><p><tt>[0 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'blue'</tt></p></td>
+                          <td><p><tt>'b'</tt></p></td>
+                          <td><p><tt>[0 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'white'</tt></p></td>
+                          <td><p><tt>'w'</tt></p></td>
+                          <td><p><tt>[1 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'black'</tt></p></td>
+                          <td><p><tt>'k'</tt></p></td>
+                          <td><p><tt>[0 0 0]</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+           <p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Color',[1 0 1]);</tt></p> <p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Color','yellow')</tt></p></td>
+      <tr valign="top">
+          <td><p><tt>'LineStyle'</tt></p></td>
+          <td><p>Line style, specified as one of the line style strings listed in this table.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>String</b></p></td>
+                          <td><p><b>Line Style</b></p></td>
+                          <td><p><b>Resulting Line</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'-'</tt></p></td>
+                          <td><p><tt>Solid line</tt></p></td>
+                          <td><p><tt>________</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'--'</tt></p></td>
+                          <td><p><tt>Dashed line</tt></p></td>
+                          <td><p><tt>-----</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>':'</tt></p></td>
+                          <td><p><tt>Dotted line</tt></p></td>
+                          <td><p><tt>.....</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'-.'</tt></p></td>
+                          <td><p><tt>Dash-dotted line</tt></p></td>
+                          <td><p><img src="linestyle_dashdotted1.png"> </img></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'none'</tt></p></td>
+                          <td><p><tt>No line</tt></p></td>
+                          <td><p><tt>No line</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+              </td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'LineWidth'</tt></p></td>
+          <td><p>Area outline width, specified as a positive scalar in point.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'LineWidth',1.5);</tt></p><p><b>Data Types:</b> <tt>single|double|int8|int16|int32|int64|uint8|uint16|uint32|uint64</tt></p></td>
+      </tr>
+      <tr valign="top">
+          <td><p><tt>'Marker'</tt></p></td>
+          <td><p>Marker symbol, specified as a string listed in the table.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>Value</b></p></td>
+                          <td><p><b>Description</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'o'</tt></p></td>
+                          <td><p><tt>Circle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'+'</tt></p></td>
+                          <td><p><tt>Plus sign</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'*'</tt></p></td>
+                          <td><p><tt>Asterisk</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'.'</tt></p></td>
+                          <td><p><tt>Point</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'x'</tt></p></td>
+                          <td><p><tt>Cross</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'square' or 's'</tt></p></td>
+                          <td><p><tt>Square</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'diamond' or 'd'</tt></p></td>
+                          <td><p><tt>Diamond</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'^'</tt></p></td>
+                          <td><p><tt>Upward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'v'</tt></p></td>
+                          <td><p><tt>Downward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'>'</tt></p></td>
+                          <td><p><tt>Right-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'<'</tt></p></td>
+                          <td><p><tt>Left-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'pentagram' or 'p'</tt></p></td>
+                          <td><p><tt>Five-pointed star (pentagram)</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'hexagram' or 'h'</tt></p></td>
+                          <td><p><tt>Six-pointed star (hexagram)</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'none'</tt></p></td>
+                          <td><p><tt>No markers</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p><b>Example:</b> <tt>thingSpeakPlot(x, y,'Marker','p');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YScale'</tt></p></td>
+          <td><p>Y-axis scale, specified as a string. Allowed values are <tt>'linear'</tt> or <tt>'log'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x, y,'YScale','log');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Grid'</tt></p></td>
+          <td><p>Plot grid, specified as a string input turning the grid <tt>'on'</tt> or <tt>'off'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Grid','on');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YLabel'</tt></p></td>
+          <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'YLabel','Y-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Xlabel'</tt></p></td>
+          <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'XLabel','X-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Title'</tt></p></td>
+          <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'Title','Plot Title');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'XGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Legend'</tt></p></td>
+          <td><p>Add a legend to your graph, specified as a cell array of strings.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Legend',{'Sine','Cosine','Tangent'});</tt></p></td>
+      </tr>
+  </tbody>
+</table>
+</p><h2>See Also<a name="14"></a></h2><p><a href="docthingspeakarea.html">thingSpeakArea</a> | <a href="docthingspeakplotyy.html">thingSpeakPlotYY</a> | <a href="docthingspeakread.html">thingSpeakRead</a> | <a href="docthingspeakscatter.html">thingSpeakScatter</a> | <a href="docthingspeakstem.html">thingSpeakStem</a> | <a href="docthingspeakwrite.html">thingSpeakWrite</a> | <a href="docurlFilter.html">urlFilter</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakPlot
+% Create 2-D line plot
+%% Syntax
+% |thingSpeakPlot(X,Y)|
+%
+% |thingSpeakPlot(Y)|
+%
+% |thingSpeakPlot(X,Y,Name,Value)| 
+%% Description
+% |thingSpeakPlot(X,Y)| plots vector Y versus vector X. If X or Y is a matrix, the vector is plotted versus the rows or columns of the matrix, whichever line up. If X is a scalar and Y is a vector, disconnected line objects are created and plotted as discrete points vertically at X.
+% 
+% |thingSpeakPlot(Y)| plots the columns of Y versus their index.
+%
+% |thingSpeakPlot(X,Y,Name,Value)| allows you to specify various line types, colors, and data point symbols.
+%% Examples
+%
+% *Create Sine Wave Plot*
+%
+% Create a line plot of a sine wave.
+x = 0:pi/100:2*pi;
+y = sin(x);
+thingSpeakPlot(x,y)
+%%
+% *Create Matrix line Plot*
+%
+% Create line charts from a magic 4 matrix.
+Y = magic(4);
+thingSpeakPlot(Y)
+%%
+% *Create Plot with Specific Line Properties*
+%
+% Create line chart with specific line properties.
+%
+% Specify the following properties:
+%%
+% 
+% * Line style: dashed line
+% * Line width: 2
+% * Line color: green
+% * Marker type: square
+x = -pi:pi/10:pi;
+y = tan(sin(x)) - sin(tan(x));
+thingSpeakPlot(x,y,'LineStyle','REPLACE_WITH_DASH_DASH','LineWidth',2,'Color','green','Marker','s')
+%%
+% *Create Plot with Log Scale*
+%
+% Create a line plot on a log scale.
+x = 0:0.1:10;
+y = exp(x);
+thingSpeakPlot(x,y,'YScale','log')
+%%
+% *Create Plot with Grid*
+%
+% Create a plot with a grid in the background.
+x = linspace(0,10);
+y = sin(x);
+thingSpeakPlot(x,y,'Grid','on')
+%%
+% *Create Plots with Date Labels*
+%
+% Create a line plot with date values between 1900 and 1990, with 10 year intervals on the x-axis.
+t = (1900:10:1990)';
+p = [75.995  91.972 105.711 123.203 131.669 ...
+    150.697 179.323 203.212 226.505 249.633]';
+thingSpeakPlot(datetime(t,1,1),p,'Grid','on')
+%%
+% Create line plot datetime values on the x-axis, in a sequence of dates. Display 10 calendar days.
+t = datetime(2015,6,28) + caldays(1:10);
+y = rand(1,10);
+thingSpeakPlot(t,y,'Grid','on')
+%%
+% *Create Plot with Title and Axis Labels*
+% 
+% Create a line plot with a title and axis labels.
+thingSpeakPlot([1:10].^2,'XLabel','Time','YLabel','Population','Title','Population in the 1900s');
+%% Input Arguments
+% |X| - X values, specified as a scalar, a vector, or a matrix. X can be a numeric array, logical array, or datetime array.
+%
+% |Y| - Y values, specified as a scalar, a vector, or a matrix. Y can be a numeric array, or logical array.
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN|.
+%
+% *Example:* |thingSpeakPlot(x,y,'Color','red','LineStyle',':','Marker','o')|
+% 
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% 	<tbody>
+% 		<tr valign="top">
+% 			<td><p><tt>'Color'</tt></p></td>
+% 			<td><p>Line color, specified as an RGB triplet or a color string. The default RGB triplet value of [0 0 1] corresponds to blue.</p>
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>Long Name</b></p></td>
+%                           <td><p><b>Short Name</b></p></td>
+%                           <td><p><b>RGB Triplet</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'yellow'</tt></p></td>
+%                           <td><p><tt>'y'</tt></p></td>
+%                           <td><p><tt>[1 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'magenta'</tt></p></td>
+%                           <td><p><tt>'m'</tt></p></td>
+%                           <td><p><tt>[1 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'cyan'</tt></p></td>
+%                           <td><p><tt>'c'</tt></p></td>
+%                           <td><p><tt>[0 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'red'</tt></p></td>
+%                           <td><p><tt>'r'</tt></p></td>
+%                           <td><p><tt>[1 0 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'green'</tt></p></td>
+%                           <td><p><tt>'g'</tt></p></td>
+%                           <td><p><tt>[0 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'blue'</tt></p></td>
+%                           <td><p><tt>'b'</tt></p></td>
+%                           <td><p><tt>[0 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'white'</tt></p></td>
+%                           <td><p><tt>'w'</tt></p></td>
+%                           <td><p><tt>[1 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'black'</tt></p></td>
+%                           <td><p><tt>'k'</tt></p></td>
+%                           <td><p><tt>[0 0 0]</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%            <p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Color',[1 0 1]);</tt></p> <p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Color','yellow')</tt></p></td>
+%       <tr valign="top">
+%           <td><p><tt>'LineStyle'</tt></p></td>
+%           <td><p>Line style, specified as one of the line style strings listed in this table.</p>          
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>String</b></p></td>
+%                           <td><p><b>Line Style</b></p></td>
+%                           <td><p><b>Resulting Line</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'-'</tt></p></td>
+%                           <td><p><tt>Solid line</tt></p></td>
+%                           <td><p><tt>________</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'REPLACE_WITH_DASH_DASH'</tt></p></td>
+%                           <td><p><tt>Dashed line</tt></p></td>
+%                           <td><p><tt>REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>':'</tt></p></td>
+%                           <td><p><tt>Dotted line</tt></p></td>
+%                           <td><p><tt>.....</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'-.'</tt></p></td>
+%                           <td><p><tt>Dash-dotted line</tt></p></td>
+%                           <td><p><img src="linestyle_dashdotted1.png"> </img></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'none'</tt></p></td>
+%                           <td><p><tt>No line</tt></p></td>
+%                           <td><p><tt>No line</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%               </td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'LineWidth'</tt></p></td>
+%           <td><p>Area outline width, specified as a positive scalar in point.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'LineWidth',1.5);</tt></p><p><b>Data Types:</b> <tt>single|double|int8|int16|int32|int64|uint8|uint16|uint32|uint64</tt></p></td>
+%       </tr>
+%       <tr valign="top">
+%           <td><p><tt>'Marker'</tt></p></td>
+%           <td><p>Marker symbol, specified as a string listed in the table.</p>          
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>Value</b></p></td>
+%                           <td><p><b>Description</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'o'</tt></p></td>
+%                           <td><p><tt>Circle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'+'</tt></p></td>
+%                           <td><p><tt>Plus sign</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'*'</tt></p></td>
+%                           <td><p><tt>Asterisk</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'.'</tt></p></td>
+%                           <td><p><tt>Point</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'x'</tt></p></td>
+%                           <td><p><tt>Cross</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'square' or 's'</tt></p></td>
+%                           <td><p><tt>Square</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'diamond' or 'd'</tt></p></td>
+%                           <td><p><tt>Diamond</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'^'</tt></p></td>
+%                           <td><p><tt>Upward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'v'</tt></p></td>
+%                           <td><p><tt>Downward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'>'</tt></p></td>
+%                           <td><p><tt>Right-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'<'</tt></p></td>
+%                           <td><p><tt>Left-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'pentagram' or 'p'</tt></p></td>
+%                           <td><p><tt>Five-pointed star (pentagram)</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'hexagram' or 'h'</tt></p></td>
+%                           <td><p><tt>Six-pointed star (hexagram)</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'none'</tt></p></td>
+%                           <td><p><tt>No markers</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%               <p><b>Example:</b> <tt>thingSpeakPlot(x, y,'Marker','p');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YScale'</tt></p></td>
+%           <td><p>Y-axis scale, specified as a string. Allowed values are <tt>'linear'</tt> or <tt>'log'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x, y,'YScale','log');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Grid'</tt></p></td>
+%           <td><p>Plot grid, specified as a string input turning the grid <tt>'on'</tt> or <tt>'off'</tt>.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Grid','on');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YLabel'</tt></p></td>
+%           <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'YLabel','Y-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Xlabel'</tt></p></td>
+%           <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'XLabel','X-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Title'</tt></p></td>
+%           <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakPlot(1:10,'Title','Plot Title');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'XGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Legend'</tt></p></td>
+%           <td><p>Add a legend to your graph, specified as a cell array of strings.</p><p><b>Example:</b> <tt>thingSpeakPlot(x,y,'Legend',{'Sine','Cosine','Tangent'});</tt></p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%% See Also
+% <docthingspeakarea.html thingSpeakArea> | <docthingspeakplotyy.html thingSpeakPlotYY> | <docthingspeakread.html thingSpeakRead> | <docthingspeakscatter.html thingSpeakScatter> | <docthingspeakstem.html thingSpeakStem> | <docthingspeakwrite.html thingSpeakWrite> | <docurlFilter.html urlFilter> 
+##### SOURCE END #####
+--></body></html>

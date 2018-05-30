@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Analysis Functions</title>
+<link rel="stylesheet" href="docstyle.css" type="text/css"><link href="../includes/product/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="introductory">
+
+<meta name="description" itemprop="description" content="[data,timestamps,chInfo] = thingSpeakRead(chId) reads the most recent data from all fields of the specified public channel on ThingSpeak.com." />
+<script type="text/javascript" src="includes/product/scripts/jquery/jquery-latest.js"></script>
+<link href="includes/product/css/site6.css?201507311854" rel="stylesheet" type="text/css">
+<link href="includes/product/css/site6_lg.css?201507311854" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="includes/product/css/site6_md.css?201507311854" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="includes/product/css/site6_sm+xs.css?201507311854" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="includes/product/css/site6_sm.css?201507311854" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="includes/product/css/site6_xs.css?201507311854" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="includes/product/css/site6_offcanvas.css?201507311854" rel="stylesheet" type="text/css">
+
+<script src="includes/shared/scripts/l10n.js"></script>
+<script src="includes/shared/scripts/docscripts.js"></script>
+<script src="includes/product/scripts/docscripts.js"></script>
+<script src="includes/shared/scripts/mw.imageanimation.js"></script>
+<script src="includes/shared/scripts/jquery.highlight.js"></script>
+<script src="includes/product/scripts/underscore-min.js"></script>
+<script src="includes/product/scripts/suggest.js"></script>
+
+
+
+
+
+<script src="../includes/product/scripts/jquery/jquery.mobile.custom.min.js"></script>
+<script src="../includes/product/scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../includes/product/scripts/global.js"></script>
+<link href="../includes/product/css/doc_center.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_installed.css" rel="stylesheet" type="text/css">
+<link href="../includes/product/css/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script type="text/javascript" src="../../ui/equationrenderer/release/MathRenderer.js"></script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3212</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">f9cbfb73-bc01-44d5-8149-ec3d9b5e11be</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body id="responsive_offcanvas">
+<div class="sticky_header_container includes_subnav">
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2016a" data-language="en" action="../templates/searchresults.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search Documentation" id="docsearch">
+<div class="input-group-btn">
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button></div>
+<div class="col-xs-9 col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5">
+<div class="section_header_content">
+<h1><a href="../documentation-center.html">Documentation</a></h1>
+</div>
+</div>
+<div class="col-xs-3 visible-xs">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"></button>
+</div>
+</div><!--END.CLASS row-->
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS section_header level_3-->
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn"><span class="sr-only">Toggle navigation</span><span class="icon-menu icon_32"></span></button>
+<span class="offcanvas_actuator_label"></span><span class="offcanvas_actuator_close"></span>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row"></div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS sticky_header_container-->
+<div class="row-offcanvas row-offcanvas-left">
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+<nav class="offcanvas_nav" role="navigation">
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_breadcrumb">
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="../documentation-center.html" itemprop="url"><span itemprop="title">All Products</span></a></li>
+<li class="product"><a href="index.html"></a>
+<div class="dropdown">
+<span class="icon-arrow-down icon_16" id="dropdownMenu1" data-toggle="dropdown"></span>
+<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+<li role="presentation"><a role="menuitem" tabindex="-1" href="getting-started-with-matlab.html?s_cid=doc_flyout">Getting Started</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="examples.html?s_cid=doc_flyout">Examples</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="functionlist.html?s_cid=doc_flyout">Functions</a></li>
+<li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.mathworks.com/help/releases/R2016a/pdf_doc//index.html?s_cid=doc_flyout">PDF Documentation</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="nav_toc">
+</ul>
+<ul xmlns:atict="http://www.arbortext.com/namespace/atict" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function"><a href="#responsive_offcanvas">Analysis Functions</a></li>
+<li class="nav_scrollspy_title" id="SSPY810-chapter">On this page</li>
+</ul>
+</nav>
+<script src="../includes/product/scripts/offcanvas.js"></script></div><!--END.CLASS sidebar-offcanvas-->
+<div class="content_container" id="content_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<section id="doc_center_content" lang="en"><div id="pgtype-topic">
+<h1 class="r2016a"><span id="buwxlw_-1" class="anchor_target"></span>Analysis Functions</h1>A&nbsp;&nbsp;
+      B&nbsp;&nbsp;
+      C&nbsp;&nbsp;
+      D&nbsp;&nbsp;
+      E&nbsp;&nbsp;
+      F&nbsp;&nbsp;
+      G&nbsp;&nbsp;
+      H&nbsp;&nbsp;
+      I&nbsp;&nbsp;
+      J&nbsp;&nbsp;
+      K&nbsp;&nbsp;
+      L&nbsp;&nbsp;
+      M&nbsp;&nbsp;
+      N&nbsp;&nbsp;
+      O&nbsp;&nbsp;
+      P&nbsp;&nbsp;
+      Q&nbsp;&nbsp;
+      R&nbsp;&nbsp;
+      S&nbsp;&nbsp;
+      <a href="#T">T</a>&nbsp;&nbsp;
+      <a href="#U">U</a>&nbsp;&nbsp;
+      V&nbsp;&nbsp;
+      W&nbsp;&nbsp;
+      X&nbsp;&nbsp;
+      Y&nbsp;&nbsp;
+      Z&nbsp;&nbsp;
+      <br><p></p><span id="T" class="anchor_target"></span><a href="thingspeakread.html">thingSpeakRead</a><br>
+<a href="thingspeakwrite.html">thingSpeakWrite</a><br>
+<span id="U" class="anchor_target"></span><a href="urlfilter.html">urlFilter</a><br>
+<span id="T" class="anchor_target"></span><a href="thingspeakauthenticate.html">thingSpeakAuthenticate</a><br>
+<a href="thingspeakauthenticatedlist.html">thingSpeakAuthenticatedList</a><br>
+<a href="thingspeakclearauthentication.html">thingSpeakClearAuthentication</a><br>
+
+</div></section>
+<div class="feedbackblock">Was this topic helpful?
+<input type="button" value="Yes" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2016a');">
+<input type="button" value="No" onClick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2016a');">
+</div>
+<!--Last updated: Fri Jul 31 18:54:08 EDT 2015-->
+</div>
+</div>
+</div><!--close_0960-->
+</div><!--close_0970-->
+<div class="body_trail_container">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="row"><div class="col-xs-12 col-sm-3"><h5><a href="index.html?s_cid=doc_ftr">Analysis Functions Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="getting-started-with-matlab.html?s_cid=doc_ftr">Getting Started</a></li>
+<li><a href="examples.html?s_cid=doc_ftr">Examples</a></li>
+<li><a href="functionlist.html?s_cid=doc_ftr">Functions</a></li>
+<li><a href="http://www.mathworks.com/help/releases/R2016a/pdf_doc//index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="../documentation-center.html?s_cid=doc_ftr">Other Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><span class="missinglink"></span></li><li><span class="missinglink"></span></li><li><span class="missinglink"></span></li><li><span class="missinglink"></span></li><li><span class="missinglink"></span></li><li><a href="../documentation-center.html?s_cid=doc_ftr">All Products</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-3"><h5><a href="http://www.mathworks.com/support/?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="http://www.mathworks.com/matlabcentral/answers/?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="http://www.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="http://www.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="http://www.mathworks.com/products/availability/?s_cid=doc_ftr">Product Requirements</a></li><li><a href="http://www.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div><!--END.CLASS container-fluid-->
+</div><!--END.CLASS body_trail_container-->
+<footer id="footer" class="bs-footer">
+<div class="container-fluid">
+<div class="footer">
+<div class="row">
+<div class="col-xs-12">
+<p class="copyright">&copy; 1994-2015 The MathWorks, Inc.</p>
+<ul class="footernav"><li class="footernav_help"><a href="MATLAB:web(matlab.internal.licenseAgreement)">Terms of Use</a></li><li class="footernav_patents"><a href="MATLAB:web([matlabroot '/patents.txt'])">Patents</a></li><li class="footernav_trademarks"><a href="MATLAB:web([matlabroot '/trademarks.txt'])">Trademarks</a></li><li class="footernav_piracy"><a href="MATLAB:web([docroot '/acknowledgments.html'])">Acknowledgments</a></li></ul></div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--close row-offcanvas-->
+</body>
+</html>

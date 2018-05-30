@@ -1,0 +1,473 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>thingSpeakStem</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-07-06"><meta name="DC.source" content="docthingspeakstem.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">EXRPCX7V62V6-9841-3217</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">1d5c50e5-8765-4967-847e-113036fad579</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string"></mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head><body><div class="content"><h1>thingSpeakStem</h1><!--introduction--><p>Create discrete sequence or stem plot</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Examples</a></li><li><a href="#6">Input Arguments</a></li><li><a href="#7">Name-Value Pair Arguments</a></li><li><a href="#8">See Also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p><tt>thingSpeakStem(Y)</tt></p><p><tt>thingSpeakStem(X,Y)</tt></p><p><tt>thingSpeakStem(X,Y,Name,Value)</tt></p><h2>Description<a name="2"></a></h2><p><tt>thingSpeakStem(Y)</tt> plots the data sequence Y as stems from the x-axis, terminated with circles for the data value. If Y is a matrix, each column is plotted as a separate series.</p><p><tt>thingSpeakStem(X,Y)</tt> plots the data sequence Y at the values specified in X.</p><p><tt>thingSpeakStem(X,Y,Name,Value)</tt> produces a stem plot with additional options specified as Name,Value pair arguments.</p><h2>Examples<a name="3"></a></h2><p><b>Create Stem Plot</b></p><p>Create a step plot of one vector of data.</p><pre class="codeinput">Y = linspace(-2*pi,2*pi,50);
+thingSpeakStem(Y)
+</pre><img vspace="5" hspace="5" src="docthingspeakstem_01.png" alt=""> <p><b>Create a Stem Plot with Separate Columns</b></p><p>Create a stem plot of a matrix, plotting each column separately.</p><pre class="codeinput">X = linspace(0,2*pi,50)';
+Y = [cos(X),0.5*sin(X)];
+thingSpeakStem(X,Y)
+</pre><img vspace="5" hspace="5" src="docthingspeakstem_02.png" alt=""> <p><b>Create a Comparative Stem Plot</b></p><p>Create a stem plot of one set of data values versus another set.</p><pre class="codeinput">x1 = linspace(0,2*pi,50)';
+x2 = linspace(pi,3*pi,50)';
+X = [x1,x2];
+Y = [cos(x1),0.5*sin(x2)];
+thingSpeakStem(X,Y)
+</pre><img vspace="5" hspace="5" src="docthingspeakstem_03.png" alt=""> <h2>Input Arguments<a name="6"></a></h2><p><tt>X</tt> - X values, specified as a scalar, a vector, or a matrix. X can be a numeric array, logical array, or datetime array.</p><p><tt>Y</tt> - Y values, specified as a scalar, a vector, or a matrix. Y can be a numeric array, or logical array.</p><h2>Name-Value Pair Arguments<a name="7"></a></h2><p>Specify optional comma-separated pairs of <tt>Name,Value</tt> arguments. <tt>Name</tt> is the argument name and <tt>Value</tt> is the corresponding value. <tt>Name</tt> must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as <tt>Name1,Value1,...,NameN,ValueN</tt>.</p><p>
+<table cellpadding="4" cellspacing="0" width="100%">
+	<tbody>
+		<tr valign="top">
+			<td><p><tt>'Color'</tt></p></td>
+			<td><p>Marker color, specified as one of these values:</p>
+              <ul style="list-style-type:disc">
+                  <li> <tt>'none'</tt> - Do not draw the outline. </li>
+                  <li> RGB triplet vector or a color string — Specify a
+                  custom color. The RGB triplet value of [0 0 0]
+                  corresponds to black. </li>
+              </ul>
+              <p>An RGB triplet is a three-element row vector whose
+              elements specify the intensities of the red, green, and
+              blue components of the color. The intensities must be in
+              the range [0,1], for example, [0.4 0.6 0.7]. This table
+              lists RGB triplet values that have equivalent color strings.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>Long Name</b></p></td>
+                          <td><p><b>Short Name</b></p></td>
+                          <td><p><b>RGB Triplet</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'yellow'</tt></p></td>
+                          <td><p><tt>'y'</tt></p></td>
+                          <td><p><tt>[1 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'magenta'</tt></p></td>
+                          <td><p><tt>'m'</tt></p></td>
+                          <td><p><tt>[1 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'cyan'</tt></p></td>
+                          <td><p><tt>'c'</tt></p></td>
+                          <td><p><tt>[0 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'red'</tt></p></td>
+                          <td><p><tt>'r'</tt></p></td>
+                          <td><p><tt>[1 0 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'green'</tt></p></td>
+                          <td><p><tt>'g'</tt></p></td>
+                          <td><p><tt>[0 1 0]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'blue'</tt></p></td>
+                          <td><p><tt>'b'</tt></p></td>
+                          <td><p><tt>[0 0 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'white'</tt></p></td>
+                          <td><p><tt>'w'</tt></p></td>
+                          <td><p><tt>[1 1 1]</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'black'</tt></p></td>
+                          <td><p><tt>'k'</tt></p></td>
+                          <td><p><tt>[0 0 0]</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p><b>Example:</b>
+              <tt>thingSpeakStem(x,y,'Marker','p','color','blue');</tt><p><b>Example:</b>
+              <tt>thingSpeakStem(x,y,'Marker','p','color',[0 0 1]);</tt></td>
+      </tr>
+      <tr valign="top">
+          <td><p><tt>'Marker'</tt></p></td>
+          <td><p>Marker symbol, specified as a string listed in the table.</p>
+              <table cellpadding="4" cellspacing="0" width="100%">
+                  <tbody>
+                      <tr valign="top">
+                          <td><p><b>Value</b></p></td>
+                          <td><p><b>Description</b></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'o'</tt></p></td>
+                          <td><p><tt>Circle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'+'</tt></p></td>
+                          <td><p><tt>Plus sign</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'*'</tt></p></td>
+                          <td><p><tt>Asterisk</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'.'</tt></p></td>
+                          <td><p><tt>Point</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'x'</tt></p></td>
+                          <td><p><tt>Cross</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'square' or 's'</tt></p></td>
+                          <td><p><tt>Square</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'diamond' or 'd'</tt></p></td>
+                          <td><p><tt>Diamond</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'^'</tt></p></td>
+                          <td><p><tt>Upward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'v'</tt></p></td>
+                          <td><p><tt>Downward-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'>'</tt></p></td>
+                          <td><p><tt>Right-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'<'</tt></p></td>
+                          <td><p><tt>Left-pointing triangle</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'pentagram' or 'p'</tt></p></td>
+                          <td><p><tt>Five-pointed star (pentagram)</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'hexagram' or 'h'</tt></p></td>
+                          <td><p><tt>Six-pointed star (hexagram)</tt></p></td>
+                      </tr>
+                      <tr valign="top">
+                          <td><p><tt>'none'</tt></p></td>
+                          <td><p><tt>No markers</tt></p></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </tr>
+       <tr valign="top">
+          <td><p><tt>'Grid'</tt></p></td>
+          <td><p>Specify if your plot has a grid. Set the value to <tt>'on'</tt> to display a grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YLabel'</tt></p></td>
+          <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'YLabel','Y-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Xlabel'</tt></p></td>
+          <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'XLabel','X-Axis');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Title'</tt></p></td>
+          <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'Title','Plot Title');</tt></p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'XGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'YGrid'</tt></p></td>
+          <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+      </tr>
+       <tr valign="top">
+          <td><p><tt>'Legend'</tt></p></td>
+          <td><p>Add a legend to your graph, specified as a cell array of strings.</p><p><b>Example:</b> <tt>thingSpeakStem(x,y,'Legend',{'Sine','Cosine','Tangent'});</tt></p></td>
+      </tr>
+  </tbody>
+</table>
+</p><h2>See Also<a name="8"></a></h2><p><a href="docthingspeakarea.html">thingSpeakArea</a> | <a href="docthingspeakplotyy.html">thingSpeakPlotYY</a> | <a href="docthingspeakread.html">thingSpeakRead</a> | <a href="docthingspeakscatter.html">thingSpeakScatter</a> | <a href="docthingspeakplot.html">thingSpeakPlot</a> | <a href="docthingspeakwrite.html">thingSpeakWrite</a> | <a href="docurlFilter.html">urlFilter</a></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% thingSpeakStem
+% Create discrete sequence or stem plot
+%% Syntax
+% |thingSpeakStem(Y)|
+%
+% |thingSpeakStem(X,Y)|
+%
+% |thingSpeakStem(X,Y,Name,Value)|
+%% Description
+% |thingSpeakStem(Y)| plots the data sequence Y as stems from the x-axis, terminated with circles for the data value. If Y is a matrix, each column is plotted as a separate series.
+%
+% |thingSpeakStem(X,Y)| plots the data sequence Y at the values specified in X.
+%
+% |thingSpeakStem(X,Y,Name,Value)| produces a stem plot with additional options specified as Name,Value pair arguments.
+%% Examples
+%
+% *Create Stem Plot*
+%
+% Create a step plot of one vector of data.
+Y = linspace(-2*pi,2*pi,50);
+thingSpeakStem(Y)
+%%
+% *Create a Stem Plot with Separate Columns*
+%
+% Create a stem plot of a matrix, plotting each column separately.
+X = linspace(0,2*pi,50)';
+Y = [cos(X),0.5*sin(X)];
+thingSpeakStem(X,Y)
+%%
+% *Create a Comparative Stem Plot*
+% 
+% Create a stem plot of one set of data values versus another set.
+x1 = linspace(0,2*pi,50)';
+x2 = linspace(pi,3*pi,50)';
+X = [x1,x2];
+Y = [cos(x1),0.5*sin(x2)];
+thingSpeakStem(X,Y)
+%% Input Arguments
+% |X| - X values, specified as a scalar, a vector, or a matrix. X can be a numeric array, logical array, or datetime array.
+%
+% |Y| - Y values, specified as a scalar, a vector, or a matrix. Y can be a numeric array, or logical array.
+%% Name-Value Pair Arguments
+% Specify optional comma-separated pairs of |Name,Value| arguments. |Name| is the argument name and |Value| is the corresponding value. |Name| must appear inside single quotes (' '). You can specify several name and value pair arguments in any order as |Name1,Value1,...,NameN,ValueN|.
+%
+% <html>
+% <table cellpadding="4" cellspacing="0" width="100%">
+% 	<tbody>
+% 		<tr valign="top">
+% 			<td><p><tt>'Color'</tt></p></td>
+% 			<td><p>Marker color, specified as one of these values:</p>
+%               <ul style="list-style-type:disc">
+%                   <li> <tt>'none'</tt> - Do not draw the outline. </li>
+%                   <li> RGB triplet vector or a color string — Specify a
+%                   custom color. The RGB triplet value of [0 0 0]
+%                   corresponds to black. </li>
+%               </ul>
+%               <p>An RGB triplet is a three-element row vector whose
+%               elements specify the intensities of the red, green, and
+%               blue components of the color. The intensities must be in
+%               the range [0,1], for example, [0.4 0.6 0.7]. This table
+%               lists RGB triplet values that have equivalent color strings.</p>
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>Long Name</b></p></td>
+%                           <td><p><b>Short Name</b></p></td>
+%                           <td><p><b>RGB Triplet</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'yellow'</tt></p></td>
+%                           <td><p><tt>'y'</tt></p></td>
+%                           <td><p><tt>[1 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'magenta'</tt></p></td>
+%                           <td><p><tt>'m'</tt></p></td>
+%                           <td><p><tt>[1 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'cyan'</tt></p></td>
+%                           <td><p><tt>'c'</tt></p></td>
+%                           <td><p><tt>[0 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'red'</tt></p></td>
+%                           <td><p><tt>'r'</tt></p></td>
+%                           <td><p><tt>[1 0 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'green'</tt></p></td>
+%                           <td><p><tt>'g'</tt></p></td>
+%                           <td><p><tt>[0 1 0]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'blue'</tt></p></td>
+%                           <td><p><tt>'b'</tt></p></td>
+%                           <td><p><tt>[0 0 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'white'</tt></p></td>
+%                           <td><p><tt>'w'</tt></p></td>
+%                           <td><p><tt>[1 1 1]</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'black'</tt></p></td>
+%                           <td><p><tt>'k'</tt></p></td>
+%                           <td><p><tt>[0 0 0]</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%               <p><b>Example:</b>
+%               <tt>thingSpeakStem(x,y,'Marker','p','color','blue');</tt><p><b>Example:</b>
+%               <tt>thingSpeakStem(x,y,'Marker','p','color',[0 0 1]);</tt></td>
+%       </tr>
+%       <tr valign="top">
+%           <td><p><tt>'Marker'</tt></p></td>
+%           <td><p>Marker symbol, specified as a string listed in the table.</p>          
+%               <table cellpadding="4" cellspacing="0" width="100%">
+%                   <tbody>
+%                       <tr valign="top">
+%                           <td><p><b>Value</b></p></td>
+%                           <td><p><b>Description</b></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'o'</tt></p></td>
+%                           <td><p><tt>Circle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'+'</tt></p></td>
+%                           <td><p><tt>Plus sign</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'*'</tt></p></td>
+%                           <td><p><tt>Asterisk</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'.'</tt></p></td>
+%                           <td><p><tt>Point</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'x'</tt></p></td>
+%                           <td><p><tt>Cross</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'square' or 's'</tt></p></td>
+%                           <td><p><tt>Square</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'diamond' or 'd'</tt></p></td>
+%                           <td><p><tt>Diamond</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'^'</tt></p></td>
+%                           <td><p><tt>Upward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'v'</tt></p></td>
+%                           <td><p><tt>Downward-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'>'</tt></p></td>
+%                           <td><p><tt>Right-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'<'</tt></p></td>
+%                           <td><p><tt>Left-pointing triangle</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'pentagram' or 'p'</tt></p></td>
+%                           <td><p><tt>Five-pointed star (pentagram)</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'hexagram' or 'h'</tt></p></td>
+%                           <td><p><tt>Six-pointed star (hexagram)</tt></p></td>
+%                       </tr>
+%                       <tr valign="top">
+%                           <td><p><tt>'none'</tt></p></td>
+%                           <td><p><tt>No markers</tt></p></td>
+%                       </tr>
+%                   </tbody>
+%               </table>
+%           </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Grid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid. Set the value to <tt>'on'</tt> to display a grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YLabel'</tt></p></td>
+%           <td><p>Y-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'YLabel','Y-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Xlabel'</tt></p></td>
+%           <td><p>X-axis label, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'XLabel','X-Axis');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Title'</tt></p></td>
+%           <td><p>Title of plot, specified as a string.</p><p><b>Example:</b> <tt>thingSpeakStem(1:10,'Title','Plot Title');</tt></p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'XGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the X axis. Set the value to <tt>'on'</tt> to display an X axis grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'YGrid'</tt></p></td>
+%           <td><p>Specify if your plot has a grid only on the Y axis. Set the value to <tt>'on'</tt> to display a Y axis grid.</p></td>
+%       </tr>
+%        <tr valign="top">
+%           <td><p><tt>'Legend'</tt></p></td>
+%           <td><p>Add a legend to your graph, specified as a cell array of strings.</p><p><b>Example:</b> <tt>thingSpeakStem(x,y,'Legend',{'Sine','Cosine','Tangent'});</tt></p></td>
+%       </tr>
+%   </tbody>
+% </table>
+% </html>
+%% See Also
+% <docthingspeakarea.html thingSpeakArea> | <docthingspeakplotyy.html thingSpeakPlotYY> | <docthingspeakread.html thingSpeakRead> | <docthingspeakscatter.html thingSpeakScatter> | <docthingspeakplot.html thingSpeakPlot> | <docthingspeakwrite.html thingSpeakWrite> | <docurlFilter.html urlFilter> 
+##### SOURCE END #####
+--></body></html>
