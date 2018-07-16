@@ -59,7 +59,10 @@ for i=1:size(files,1)
     end
     if strcmp(file(end-3:end),'.dgz')
         dgzs=[dgzs; file(1:end-4)];
+    elseif strcmp(file(end-3:end),'.csv')
+        dgzs=[dgzs; file(1:end-4)];
     end
+    dgzs
 end
 
 set(handles.chooseFile,'string',{dgzs})

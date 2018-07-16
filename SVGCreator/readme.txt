@@ -1,4 +1,10 @@
-create DGZ of arbitrary shapes from C:\usr\local\lib\curves\testclip.tcl
+method 1: create DGZ of arbitrary shapes from C:\usr\local\lib\curves\testclip.tcl
+
+method 2: create SVG from illustrator, convert to points with coordiator https://spotify.github.io/coordinator/
+
+
+
+
 
 
 steps for printing object
@@ -10,3 +16,6 @@ steps for printing object
 5. get all your objects into one file that you want to print, export as stp
 6. in freecad, convert to stl
 7. send to 3d printer, print front face down
+
+
+

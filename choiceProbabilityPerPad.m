@@ -15,8 +15,8 @@ mksqlite( 'result_type', 2 );  % 0: array of structs, 1:struct of arrays, 2: (ce
 %% Select trials to analyze
 side=0; %0 for left, 1 for right
 
-% dates='6072018';
-dates='6062018, 6072018, 6082018';
+dates='6132018';
+dates='6082018, 6072018';
 
 % visID='SampleID';
 visID='36';
