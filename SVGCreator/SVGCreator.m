@@ -58,14 +58,13 @@ for i=1:size(files,1)
         continue;
     end
     if strcmp(file(end-3:end),'.dgz')
-        dgzs=[dgzs; file(1:end-4)];
+        dgzs=[dgzs; {file}];
     elseif strcmp(file(end-3:end),'.csv')
-        dgzs=[dgzs; file(1:end-4)];
+        dgzs=[dgzs; {file}];
     end
-    dgzs
 end
 
-set(handles.chooseFile,'string',{dgzs})
+set(handles.chooseFile,'string',dgzs)
 
 
 loadFile(handles)
@@ -75,12 +74,44 @@ global xs ys options
 %Get the chosen file
 files=get(handles.chooseFile,'string');
 chosen=files(get(handles.chooseFile,'value'));
-filename=[chosen{1} '.dgz'];
+filename=chosen{1};
 
 %Read the dgz into xs and ys
-c=dg_read(fullfile(pwd, filename));
-xs=c.union{1,1};
-ys=c.union{2,1};
+if strcmp(filename(end-2:end),'dgz')
+    c=dg_read(fullfile(pwd, filename));
+    xs=c.union{1,1};
+    ys=c.union{2,1};
+elseif strcmp(filename(end-2:end),'csv')
+    a=csvread(filename,2); %start with second row because first is just column labels
+    
+    %need to reorder points
+    cPt = a(1,1:2); %current point
+    new=[];
+    dists=[];
+    for i=1:size(a,1)
+        cInd=dsearchn(a,cPt); %find index of closest
+        if size(a,1) > 10
+            dists=[dists; pdist([cPt;a(cInd,:)])]; %keep track of typical distances between points
+        else
+            med=median(dists);
+            dist=pdist([cPt;a(cInd,:)]);
+            if dist>(med*3) %if the closest point is really far away, ignore it
+                a(cInd,:)=[];%remove from current list
+                continue;
+            end
+            
+        end
+        cPt=a(cInd,:); %grab that point
+        new=[new; cPt]; %add that to new list
+        a(cInd,:)=[];%remove from current list
+    end    
+%     xs=new(end:-1:1,1);
+%     ys=new(end:-1:1,2);
+    
+    xs=new(:,1);
+    ys=new(:,2);
+    ys=-ys;
+end
 
 %Plot input in the first box
 plot(handles.axes1,xs,ys)
@@ -232,6 +263,11 @@ end
 
 angle=angle+pi/2;
 
+
+%% Find first and mid points and reorder points
+% %Find first point and mid point so we can re-order the list of points to simplify finding symmetry if necessary
+slotSpots=find(points(:,5)==0); %Indices where there were slices
+
 %Find midpoint
 xmid=(x1+x0)/2;
 ymid=(y1+y0)/2;
@@ -242,17 +278,11 @@ ymid=(y1+y0)/2;
 x_ro=x_ro-xmid;
 y_ro=y_ro-ymid;
 
-%% Find first and mid points and reorder points
-% %Find first point and mid point so we can re-order the list of points to simplify finding symmetry if necessary
-slotSpots=find(points(:,5)==0); %Indices where there were slices
-% if x_ro(slotSpots(pair(1))+10) < 0
-    first=slotSpots(pair(1)); %selection 1:6
-    mp=slotSpots(pair(2)); %Selection 1:6 +6
-% else %Not necessary probably
-%     disp boooooo 
-%     first=slotSpots(pair(2));
-%     mp=slotSpots(pair(1));
-% end
+pair(1)=options.radio;
+pair(2)=pair(1)+floor(options.contacts/2);
+first=slotSpots(pair(1)); %selection 1:6
+mp=slotSpots(pair(2)); %Selection 1:6 +6
+
 slotSpots=points(:,5)~=0; %1 where theres a slot
 
 %Reorder according to that start point
@@ -289,6 +319,15 @@ newys=newys-mean(newys);
 axes(handles.axes2); cla; hold on; axis equal
 plot(points(:,1),points(:,2))
 plot(points(points(:,5)==0,1),points(points(:,5)==0,2),'k.','MarkerSize',20)
+
+%movable points to allow user to change cut points
+mycb = @(pos) movingPoint(handles,pos); %sends location of moving dot and handles to function 'movingPoint'
+cutPoints=[points(points(:,5)==0,1) points(points(:,5)==0,2)];
+for i=1:size(cutPoints,1)
+    mph(i)=impoint(gca,cutPoints(i,1),cutPoints(i,2));
+    addNewPositionCallback(mph(i),mycb);
+end
+
 plot(points(1,1),points(1,2),'g.','MarkerSize',20)
 plot([x0 x1],[y0 y1]) %Slice
 set(gca,'visible','off');
@@ -304,6 +343,38 @@ rotate(blob,[0 0 1],angle*360/(2*pi))
 
 x_noslot=x_noslot-mean(x_noslot);
 y_noslot=y_noslot-mean(y_noslot);
+
+
+function movingPoint(handles, pos)
+global points
+cInd=dsearchn(points(:,1:2),pos); %find index of closest point
+
+cutPoints=points(points(:,5)==0,1:2);
+
+cpInd=dsearchn(cutPoints,pos); %find index of closest point
+cpX=cutPoints(cpInd,1); %x location of closest slot
+cpY=cutPoints(cpInd,2); %y location of closest slot
+
+[tf, index]=ismember(points(:,1:2),[cpX cpY],'rows');
+
+index=find(index);
+
+points(index,5)=1; %change slot column so it looks like there shouldnt be a slot here
+points(cInd,5)=0; %change slot column so it looks like there should be a slot here
+
+% plot(cutPoints(cpInd,1),cutPoints(cpInd,2),'.k','MarkerSize',20)
+
+
+handleSymmetry(handles)
+
+% pos
+
+
+
+
+
+
+
 
 function circle(x,r)
 global options
